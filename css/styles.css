@@ -1102,3 +1102,101 @@ body {
   transform: scale(2.5);
   transition: all 0.5s ease-in-out 0.5s;
 }
+
+/* ============================================
+   RESPONSIVE MOBILE OPTIMIZATIONS
+   ============================================ */
+
+/* Hide scrollbar for filter buttons */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product filter buttons - horizontal scroll on mobile */
+.filter-btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .filter-btn-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 4px;
+  }
+  .filter-btn-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Card1 - Company profile details responsive */
+@media (max-width: 480px) {
+  .card1 {
+    max-width: 100%;
+    padding: 10px 12px 6px 12px;
+    margin: 2px;
+  }
+  .card1 h3 {
+    font-size: 0.9rem;
+  }
+  .card1 p.small {
+    font-size: 0.7rem;
+  }
+}
+
+/* Mobile product modal layout */
+@media (max-width: 639px) {
+  #modal-content-body {
+    flex-direction: column;
+  }
+  #modal-content-body > div {
+    width: 100% !important;
+  }
+}
+
+/* Mobile subscribe card */
+.subscribe-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Mobile glass cards reduce padding */
+@media (max-width: 640px) {
+  .glass {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* Ensure touch targets are at least 44px on mobile */
+@media (max-width: 767px) {
+  .filter-btn {
+    min-height: 36px;
+    padding: 6px 14px;
+  }
+  
+  .map-btn {
+    min-height: 40px;
+    padding: 8px 16px;
+  }
+}
+
+/* Hero shuffle grid mobile optimization */
+@media (max-width: 639px) {
+  #shuffle-grid {
+    max-width: 280px;
+    height: 260px !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  #shuffle-grid {
+    max-width: 360px;
+    height: 320px !important;
+  }
+}

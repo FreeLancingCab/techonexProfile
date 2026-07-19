@@ -33,31 +33,31 @@ const PageTemplates = {
         <div class="absolute top-20 right-10 w-72 h-72 bg-[#0077C8]/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-10 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl"></div>
 
-        <div class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 relative z-10">
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 relative z-10">
           
           <!-- Left Content -->
-          <div class="space-y-6">
+          <div class="space-y-4 md:space-y-6 text-center lg:text-left">
             <span class="inline-block px-4 py-1.5 text-[10px] font-bold tracking-widest text-[#0077C8] bg-[#0077C8]/10 border border-[#0077C8]/20 rounded-full uppercase">
               Corporate Showroom
             </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold font-display text-slate-900 leading-tight">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold font-display text-slate-900 leading-tight">
               Technoex Trading Corporation
             </h1>
-            <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-lg">
+            <p class="text-sm md:text-lg text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
               Authorized distributor for Hitachi, Trident & Uniline. Industrial compressors, dryers, and UPS systems since 2009.
             </p>
-            <div class="flex flex-wrap gap-4">
-              <a href="#products" class="px-6 py-3 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-sm shadow-lg shadow-[#0077C8]/20 hover:shadow-indigo-600/30 hover:-translate-y-0.5 transition-all duration-200">
+            <div class="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
+              <a href="#products" class="px-5 py-2.5 md:px-6 md:py-3 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-xs md:text-sm shadow-lg shadow-[#0077C8]/20 hover:shadow-[#0077C8]/30 hover:-translate-y-0.5 transition-all duration-200">
                 Explore Products
               </a>
-              <a href="#catalog" class="px-6 py-3 rounded-xl bg-white text-slate-700 font-semibold text-sm border border-slate-200 hover:border-cyan-300 hover:text-[#0077C8] transition-all duration-200">
+              <a href="#catalog" class="px-5 py-2.5 md:px-6 md:py-3 rounded-xl bg-white text-slate-700 font-semibold text-xs md:text-sm border border-slate-200 hover:border-cyan-300 hover:text-[#0077C8] transition-all duration-200">
                 Download Catalog
               </a>
             </div>
           </div>
 
           <!-- Right Side - Shuffle Grid -->
-          <div id="shuffle-grid" class="grid h-[420px] gap-1.5 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50" style="grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr);"></div>
+          <div id="shuffle-grid" class="grid h-[280px] sm:h-[350px] md:h-[420px] gap-1 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 mx-auto w-full max-w-[320px] sm:max-w-[400px] md:max-w-none" style="grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr);"></div>
 
         </div>
       </section>
@@ -148,17 +148,17 @@ const PageTemplates = {
   // Product Range Page
   products: () => {
     return `
-      <section class="py-16 px-6 max-w-7xl mx-auto relative z-10 min-h-[80vh] animate-fade-in-up">
+      <section class="py-10 md:py-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10 min-h-[80vh] animate-fade-in-up">
         <div class="relative z-10">
-          <div class="text-center mb-12 mt-6">
-            <h1 class="text-4xl md:text-5xl font-bold font-display text-slate-900 mb-3">Product Inventory</h1>
+          <div class="text-center mb-8 md:mb-12 mt-6">
+            <h1 class="text-3xl md:text-5xl font-bold font-display text-slate-900 mb-3">Product Inventory</h1>
             <p class="text-slate-500 max-w-2xl mx-auto text-sm">
               Explore our complete portfolio. Authorized partner for: <strong class="text-[#0077C8]">Hitachi, Trident, Uniline, Hitachi Hi-Rel</strong>.
             </p>
           </div>
 
           <!-- Search & Filter Controls -->
-          <div class="glass p-4 rounded-2xl mb-12 flex flex-col lg:flex-row justify-between items-center gap-4 shadow-sm">
+          <div class="glass p-3 md:p-4 rounded-2xl mb-8 md:mb-12 flex flex-col lg:flex-row justify-between items-center gap-3 md:gap-4 shadow-sm">
             <!-- Search input -->
             <div class="relative w-full lg:max-w-xs">
               <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
@@ -175,34 +175,34 @@ const PageTemplates = {
             </div>
 
             <!-- Category filter buttons -->
-            <div class="flex flex-wrap items-center gap-1.5 w-full lg:w-auto">
-              <button class="filter-btn active px-3.5 py-1.5 rounded-lg font-medium text-xs border border-slate-200 transition-all duration-200" data-category="all">All</button>
-              <button class="filter-btn px-3.5 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="compressor">Compressors</button>
-              <button class="filter-btn px-3.5 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="dryer">Dryers</button>
-              <button class="filter-btn px-3.5 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="ups">UPS Systems</button>
-              <button class="filter-btn px-3.5 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="vacuum">Vacuum Pumps</button>
-              <button class="filter-btn px-3.5 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="stabilizer">Stabilizers</button>
-              <button class="filter-btn px-3.5 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="accessories">Accessories</button>
-              <button class="filter-btn px-3.5 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="services">Services</button>
+            <div class="flex flex-nowrap lg:flex-wrap items-center gap-1.5 w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0 -mx-1 px-1 lg:mx-0 lg:px-0 scrollbar-hide">
+              <button class="filter-btn active px-3 py-1.5 rounded-lg font-medium text-xs border border-slate-200 transition-all duration-200" data-category="all">All</button>
+              <button class="filter-btn px-3 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="compressor">Compressors</button>
+              <button class="filter-btn px-3 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="dryer">Dryers</button>
+              <button class="filter-btn px-3 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="ups">UPS Systems</button>
+              <button class="filter-btn px-3 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="vacuum">Vacuum Pumps</button>
+              <button class="filter-btn px-3 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="stabilizer">Stabilizers</button>
+              <button class="filter-btn px-3 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="accessories">Accessories</button>
+              <button class="filter-btn px-3 py-1.5 rounded-lg font-medium text-xs text-slate-500 border border-transparent hover:text-slate-800 hover:border-slate-200 transition-all duration-200" data-category="services">Services</button>
             </div>
           </div>
 
           <!-- Product Grid -->
-          <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             <!-- Dynamically populated -->
           </div>
         </div>
       </section>
 
       <!-- Detailed product modal overlay -->
-      <div id="product-modal" class="fixed inset-0 bg-slate-950/65 backdrop-blur-sm flex items-center justify-center z-50 p-4 pt-20 opacity-0 pointer-events-none transition-all duration-300">
-        <div class="relative bg-white border border-slate-200 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl scale-95 transition-all duration-300 max-h-[90vh] flex flex-col modal-content">
-          <button id="modal-close" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <div id="product-modal" class="fixed inset-0 bg-slate-950/65 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-4 pt-16 sm:pt-20 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="relative bg-white border border-slate-200 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl scale-95 transition-all duration-300 max-h-[85vh] flex flex-col modal-content">
+          <button id="modal-close" class="absolute top-3 right-3 z-20 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors">
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
-          <div id="modal-content-body" class="overflow-y-auto p-6 md:p-8 flex flex-col md:flex-row gap-6 text-slate-800">
+          <div id="modal-content-body" class="overflow-y-auto p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-4 sm:gap-6 text-slate-800">
             <!-- Modal details dynamic render -->
           </div>
         </div>
@@ -236,18 +236,18 @@ const PageTemplates = {
     ];
 
     const termsHTML = terms.map(term => `
-      <div class="border border-slate-200 rounded-xl overflow-hidden glass-light transition-colors hover:border-slate-300 mb-4">
+      <div class="border border-slate-200 rounded-xl overflow-hidden glass-light transition-colors hover:border-slate-300 mb-3 md:mb-4">
         <button 
-          class="w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none select-none text-slate-800 hover:text-[#0077C8] font-semibold text-base transition-colors group"
+          class="w-full px-4 md:px-5 py-3 md:py-4 flex items-center justify-between text-left focus:outline-none select-none text-slate-800 hover:text-[#0077C8] font-semibold text-sm md:text-base transition-colors group"
           onclick="PageTemplates.handlers.toggleAccordion('${term.id}')"
         >
           <span>${term.title}</span>
-          <svg id="icon-${term.id}" class="w-4 h-4 text-slate-400 group-hover:text-[#0077C8] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg id="icon-${term.id}" class="w-4 h-4 text-slate-400 group-hover:text-[#0077C8] transform transition-transform duration-300 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </button>
         <div id="content-${term.id}" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-100/10">
-          <p class="px-5 pb-5 pt-1.5 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+          <p class="px-4 md:px-5 pb-4 md:pb-5 pt-1.5 text-slate-600 text-xs md:text-sm leading-relaxed border-t border-slate-100">
             ${term.content}
           </p>
         </div>
@@ -255,10 +255,10 @@ const PageTemplates = {
     `).join("");
 
     return `
-      <section class="py-16 px-6 max-w-3xl mx-auto relative z-10 min-h-[80vh] animate-fade-in-up">
+      <section class="py-10 md:py-16 px-4 md:px-6 max-w-3xl mx-auto relative z-10 min-h-[80vh] animate-fade-in-up">
         <div class="relative z-10">
-          <div class="text-center mb-12 mt-6">
-            <h1 class="text-4xl md:text-5xl font-bold font-display text-slate-950 mb-3">Terms & Policies</h1>
+          <div class="text-center mb-8 md:mb-12 mt-6">
+            <h1 class="text-3xl md:text-5xl font-bold font-display text-slate-950 mb-3">Terms & Policies</h1>
             <p class="text-slate-500 max-w-xl mx-auto text-sm">
               Read through our primary distributor agreements, AMC structures, warranties, and service level guidelines.
             </p>
@@ -274,37 +274,37 @@ const PageTemplates = {
   // Catalog Download Page
   catalog: () => {
     return `
-      <section class="py-16 px-6 max-w-5xl mx-auto relative z-10 min-h-[80vh] flex flex-col justify-center animate-fade-in-up">
+      <section class="py-10 md:py-16 px-4 md:px-6 max-w-5xl mx-auto relative z-10 min-h-[80vh] flex flex-col justify-center animate-fade-in-up">
         <div class="relative z-10">
-          <div class="text-center mb-12 mt-6">
-            <h1 class="text-4xl md:text-5xl font-bold font-display text-slate-950 mb-3">Technical Catalog</h1>
+          <div class="text-center mb-8 md:mb-12 mt-6">
+            <h1 class="text-3xl md:text-5xl font-bold font-display text-slate-950 mb-3">Technical Catalog</h1>
             <p class="text-slate-500 max-w-xl mx-auto text-sm">
               Download our complete engineering catalog including sizing charts, layouts, electrical parameters, and specifications.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white/70 rounded-2xl border border-slate-200/80 p-6 md:p-8 glass shadow-md">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center bg-white/70 rounded-2xl border border-slate-200/80 p-5 md:p-8 glass shadow-md">
             
             <!-- Book Cover Catalog -->
             <div class="md:col-span-5 flex justify-center py-4">
-              <div class="relative w-52 h-64 bg-gradient-to-br from-[#003B73] via-[#001a3a] to-slate-900 rounded-xl shadow-lg border border-[#0077C8]/20 p-5 flex flex-col justify-between overflow-hidden group select-none">
+              <div class="relative w-44 h-56 sm:w-52 sm:h-64 bg-gradient-to-br from-[#003B73] via-[#001a3a] to-slate-900 rounded-xl shadow-lg border border-[#0077C8]/20 p-4 sm:p-5 flex flex-col justify-between overflow-hidden group select-none">
                 <div class="absolute -right-10 -top-10 w-24 h-24 rounded-full bg-white/10 blur-lg"></div>
                 <div class="relative z-10">
-                  <div class="flex justify-between items-start mb-4">
-                    <span class="text-[9px] font-bold tracking-widest text-[#b0e0ff] uppercase">Product Specifications</span>
-                    <span class="text-[9px] bg-[#0077C8]/30 text-[#b0e0ff] font-semibold px-2 py-0.5 rounded-full">PDF v${CompanyData.catalog.version}</span>
+                  <div class="flex justify-between items-start mb-3 sm:mb-4">
+                    <span class="text-[8px] sm:text-[9px] font-bold tracking-widest text-[#b0e0ff] uppercase">Product Specifications</span>
+                    <span class="text-[8px] sm:text-[9px] bg-[#0077C8]/30 text-[#b0e0ff] font-semibold px-1.5 sm:px-2 py-0.5 rounded-full">PDF v${CompanyData.catalog.version}</span>
                   </div>
-                  <h3 class="text-lg font-black font-display leading-tight text-white mb-1">TECHNOEX</h3>
-                  <p class="text-[9px] text-slate-300 leading-normal">Air Compressors, Dryers, Vacuum Pumps, and UPS Systems.</p>
+                  <h3 class="text-base sm:text-lg font-black font-display leading-tight text-white mb-1">TECHNOEX</h3>
+                  <p class="text-[8px] sm:text-[9px] text-slate-300 leading-normal">Air Compressors, Dryers, Vacuum Pumps, and UPS Systems.</p>
                 </div>
 
-                <div class="relative z-10 flex justify-between items-center border-t border-[#002a52] pt-4">
+                <div class="relative z-10 flex justify-between items-center border-t border-[#002a52] pt-3 sm:pt-4">
                   <div>
-                    <span class="block text-[8px] text-[#b0e0ff] uppercase">Released</span>
-                    <span class="text-xs font-semibold text-slate-200">${CompanyData.catalog.releaseDate}</span>
+                    <span class="block text-[7px] sm:text-[8px] text-[#b0e0ff] uppercase">Released</span>
+                    <span class="text-[10px] sm:text-xs font-semibold text-slate-200">${CompanyData.catalog.releaseDate}</span>
                   </div>
-                  <div class="w-8 h-8 rounded-lg bg-[#0077C8] flex items-center justify-center text-white hover:bg-[#0077C8] transition-colors">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#0077C8] flex items-center justify-center text-white hover:bg-[#0077C8] transition-colors">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                     </svg>
                   </div>
@@ -314,39 +314,39 @@ const PageTemplates = {
 
             <!-- Download forms details -->
             <div class="md:col-span-7 flex flex-col justify-center">
-              <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">Technical Product Guide</h2>
-              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              <h2 class="text-lg md:text-2xl font-bold text-slate-900 mb-2">Technical Product Guide</h2>
+              <p class="text-slate-600 text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
                 Features detail charts for the <strong class="text-[#0077C8]">Piston Air Compressor</strong>, flow tables for the <strong class="text-[#0077C8]">Trident Dryspell</strong>, electrical load criteria for the <strong class="text-[#0077C8]">Online UPS Cabinet</strong>, and accessories sizing metrics.
               </p>
 
-              <div class="grid grid-cols-3 gap-3 mb-6">
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
-                  <span class="block text-[9px] text-slate-400 uppercase font-semibold">Format</span>
-                  <span class="text-xs font-semibold text-slate-700">PDF Document</span>
+              <div class="grid grid-cols-3 gap-2 sm:gap-3 mb-4 md:mb-6">
+                <div class="p-2 sm:p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
+                  <span class="block text-[8px] sm:text-[9px] text-slate-400 uppercase font-semibold">Format</span>
+                  <span class="text-[10px] sm:text-xs font-semibold text-slate-700">PDF Document</span>
                 </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
-                  <span class="block text-[9px] text-slate-400 uppercase font-semibold">Size</span>
-                  <span class="text-xs font-semibold text-slate-700">${CompanyData.catalog.fileSize}</span>
+                <div class="p-2 sm:p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
+                  <span class="block text-[8px] sm:text-[9px] text-slate-400 uppercase font-semibold">Size</span>
+                  <span class="text-[10px] sm:text-xs font-semibold text-slate-700">${CompanyData.catalog.fileSize}</span>
                 </div>
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
-                  <span class="block text-[9px] text-slate-400 uppercase font-semibold">Pages</span>
-                  <span class="text-xs font-semibold text-slate-700">${CompanyData.catalog.pageCount} Pages</span>
+                <div class="p-2 sm:p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
+                  <span class="block text-[8px] sm:text-[9px] text-slate-400 uppercase font-semibold">Pages</span>
+                  <span class="text-[10px] sm:text-xs font-semibold text-slate-700">${CompanyData.catalog.pageCount} Pages</span>
                 </div>
               </div>
 
               <div id="download-panel">
-                <form id="download-form" class="space-y-4">
-                  <div class="flex flex-col sm:flex-row gap-3">
+                <form id="download-form" class="space-y-3 md:space-y-4">
+                  <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
                     <input 
                       type="email" 
                       id="client-email" 
                       required 
                       placeholder="Enter your email to download" 
-                      class="flex-1 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm shadow-sm"
+                      class="flex-1 px-3 sm:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm shadow-sm"
                     />
                     <button 
                       type="submit" 
-                      class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-indigo-600/25 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group whitespace-nowrap"
+                      class="px-5 sm:px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-[#0077C8]/25 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group whitespace-nowrap"
                     >
                       <span>Request PDF</span>
                       <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -368,42 +368,42 @@ const PageTemplates = {
   // Contact Page
   contact: () => {
     return `
-      <section class="py-16 px-6 max-w-6xl mx-auto relative z-10 min-h-[80vh] animate-fade-in-up">
+      <section class="py-10 md:py-16 px-4 md:px-6 max-w-6xl mx-auto relative z-10 min-h-[80vh] animate-fade-in-up">
         <div class="relative z-10">
-          <div class="text-center mb-12 mt-6">
+          <div class="text-center mb-8 md:mb-12 mt-6">
             <span class="inline-block px-4 py-1.5 text-[10px] font-bold tracking-widest text-[#0077C8] bg-[#0077C8]/10 border border-[#0077C8]/20 rounded-full uppercase mb-4">Get In Touch</span>
-            <h1 class="text-4xl md:text-5xl font-bold font-display text-slate-950 mb-3">Contact Us</h1>
+            <h1 class="text-3xl md:text-5xl font-bold font-display text-slate-950 mb-3">Contact Us</h1>
             <p class="text-slate-500 max-w-xl mx-auto text-sm">
               Ready to discuss your industrial needs? Reach out to our team for quotes, technical support, or partnership enquiries.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <!-- Contact Form -->
-            <div class="glass p-8 rounded-2xl border border-slate-200/80 shadow-md">
-              <h2 class="text-xl font-bold text-slate-900 mb-6">Send us a message</h2>
-              <form id="contact-form" class="space-y-4">
-                <div class="grid grid-cols-2 gap-4">
+            <div class="glass p-5 md:p-8 rounded-2xl border border-slate-200/80 shadow-md">
+              <h2 class="text-lg md:text-xl font-bold text-slate-900 mb-4 md:mb-6">Send us a message</h2>
+              <form id="contact-form" class="space-y-3 md:space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   <div>
                     <label class="block text-xs font-semibold text-slate-600 mb-1.5">First Name</label>
-                    <input type="text" required placeholder="John" class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
+                    <input type="text" required placeholder="John" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
                   </div>
                   <div>
                     <label class="block text-xs font-semibold text-slate-600 mb-1.5">Last Name</label>
-                    <input type="text" required placeholder="Doe" class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
+                    <input type="text" required placeholder="Doe" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
                   </div>
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-600 mb-1.5">Email</label>
-                  <input type="email" required placeholder="john@company.com" class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
+                  <input type="email" required placeholder="john@company.com" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-600 mb-1.5">Phone</label>
-                  <input type="tel" placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
+                  <input type="tel" placeholder="+91 98765 43210" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-600 mb-1.5">Subject</label>
-                  <select class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:border-[#0077C8] transition-colors text-sm">
+                  <select class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:border-[#0077C8] transition-colors text-sm">
                     <option>Request Quote</option>
                     <option>Technical Support</option>
                     <option>Partnership Enquiry</option>
@@ -413,17 +413,17 @@ const PageTemplates = {
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-600 mb-1.5">Message</label>
-                  <textarea rows="4" required placeholder="Tell us about your requirements..." class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm resize-none"></textarea>
+                  <textarea rows="3" required placeholder="Tell us about your requirements..." class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm resize-none"></textarea>
                 </div>
-                <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-sm shadow-lg shadow-[#0077C8]/20 hover:shadow-indigo-600/30 hover:-translate-y-0.5 transition-all duration-200">
+                <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-sm shadow-lg shadow-[#0077C8]/20 hover:shadow-[#0077C8]/30 hover:-translate-y-0.5 transition-all duration-200">
                   Send Message
                 </button>
               </form>
             </div>
 
             <!-- Profile Card -->
-            <div class="flex flex-col items-center pt-8">
-              <div class="card">
+            <div class="flex flex-col items-center pt-4 md:pt-8">
+              <div class="card scale-[0.85] sm:scale-90 md:scale-100 origin-top">
                 <button class="mail">
                   <svg class="lucide lucide-mail" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
                     <rect rx="2" y="4" x="2" height="16" width="20"></rect>
@@ -456,7 +456,7 @@ const PageTemplates = {
               </div>
 
               <!-- Map Section -->
-              <div class="mt-8 w-full max-w-sm rounded-2xl overflow-hidden border border-slate-200/80 shadow-md">
+              <div class="mt-6 md:mt-8 w-full max-w-sm rounded-2xl overflow-hidden border border-slate-200/80 shadow-md">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5!2d77.0!3d28.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04b0b0b0b0b0%3A0x0!2sNew+Delhi!5e0!3m2!1sen!2sin!4v1234567890" 
                   width="100%" 
@@ -615,44 +615,44 @@ const PageTemplates = {
       `).join("");
 
       body.innerHTML = `
-        <div class="md:w-1/2 flex flex-col text-slate-800 p-6">
+        <div class="md:w-1/2 flex flex-col text-slate-800 p-4 sm:p-6">
           <div>
-            <div class="w-full h-64 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-4 p-4">
+            <div class="w-full h-48 sm:h-64 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-3 sm:mb-4 p-3 sm:p-4">
               <img src="${productImage}" alt="${prod.name}" class="max-w-full max-h-full object-contain" />
             </div>
             <span class="inline-block px-2.5 py-0.5 text-[9px] font-bold tracking-wider text-[#0077C8] bg-[#0077C8]/10 rounded-full mb-2 uppercase">${prod.brand}</span>
-            <h2 class="text-xl font-bold text-slate-900 leading-tight mb-2">${prod.name}</h2>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900 leading-tight mb-2">${prod.name}</h2>
             <p class="text-slate-500 text-xs leading-relaxed">${prod.shortDescription}</p>
           </div>
-          <div class="mt-auto pt-6">
+          <div class="mt-auto pt-4 sm:pt-6">
             <span class="block text-[9px] text-slate-400 uppercase font-semibold mb-1">Pricing Status</span>
-            <span class="text-lg font-bold text-[#0077C8] mb-4 block">${prod.price}</span>
+            <span class="text-base sm:text-lg font-bold text-[#0077C8] mb-3 sm:mb-4 block">${prod.price}</span>
             <a href="mailto:support@technoex.com" class="request-quote-btn">
               Request Quote
             </a>
           </div>
         </div>
 
-        <div class="md:w-1/2 flex flex-col gap-4 p-6">
+        <div class="md:w-1/2 flex flex-col gap-3 sm:gap-4 p-4 sm:p-6">
           <div>
-            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wider mb-3">
+            <h3 class="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-2 sm:mb-3">
               Technical Specifications
             </h3>
-            <ul class="space-y-2.5 bg-slate-50 p-5 rounded-xl border border-slate-200">
+            <ul class="space-y-2 sm:space-y-2.5 bg-slate-50 p-3 sm:p-5 rounded-xl border border-slate-200">
               ${specList}
             </ul>
           </div>
           
           <div>
-            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wider mb-3">
+            <h3 class="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-2 sm:mb-3">
               Operating Layout
             </h3>
-            <div class="grid grid-cols-1 gap-2.5">
+            <div class="grid grid-cols-1 gap-2 sm:gap-2.5">
               ${featureList}
             </div>
           </div>
 
-          <div class="mt-auto pt-5">
+          <div class="mt-auto pt-4 sm:pt-5">
             <a href="mailto:support@technoex.com" class="enquiry-btn">
               Enquiry Now
             </a>
