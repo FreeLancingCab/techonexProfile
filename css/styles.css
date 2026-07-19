@@ -1200,3 +1200,30 @@ body {
     height: 320px !important;
   }
 }
+
+/* PillNav responsive */
+#pill-nav-container {
+  padding: 0 4px;
+}
+
+@media (max-width: 359px) {
+  #pill-nav-container nav {
+    max-width: 320px;
+  }
+  #pill-nav-container .pill-nav-item {
+    font-size: 9px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 639px) {
+  #pill-nav-container nav {
+    max-width: 420px;
+  }
+  #pill-nav-container .pill-nav-item {
+    font-size: 10px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}

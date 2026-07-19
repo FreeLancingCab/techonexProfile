@@ -37,7 +37,7 @@ class PillNav {
 
   render() {
     const container = document.createElement('div');
-    container.className = 'fixed top-3 md:top-4 z-[1000] left-1/2 -translate-x-1/2 w-auto max-w-[calc(100vw-1rem)]';
+    container.className = 'fixed top-3 left-0 right-0 z-[1000] flex justify-center px-3';
     container.id = 'pill-nav-container';
 
     const cssVars = {
@@ -45,32 +45,32 @@ class PillNav {
       '--pill-bg': this.pillColor,
       '--hover-text': this.hoveredPillTextColor,
       '--pill-text': this.pillTextColor,
-      '--nav-h': '42px',
-      '--logo': '36px',
-      '--pill-pad-x': '18px',
-      '--pill-gap': '3px'
+      '--nav-h': '38px',
+      '--logo': '34px',
+      '--pill-pad-x': '14px',
+      '--pill-gap': '2px'
     };
 
     container.innerHTML = `
-      <nav class="w-full md:w-max flex items-center justify-center md:justify-start box-border ${this.className}" aria-label="Primary" style="${Object.entries(cssVars).map(([k,v]) => `${k}:${v}`).join(';')}">
-        <a href="${this.items[0]?.href || '#'}" aria-label="Home" class="pill-nav-logo rounded-full p-1.5 md:p-2 inline-flex items-center justify-center overflow-hidden shrink-0" style="width:var(--nav-h);height:var(--nav-h);background:var(--base,#000)">
+      <nav class="w-full max-w-[500px] flex items-center justify-center box-border rounded-full ${this.className}" aria-label="Primary" style="${Object.entries(cssVars).map(([k,v]) => `${k}:${v}`).join(';')}">
+        <a href="${this.items[0]?.href || '#'}" aria-label="Home" class="pill-nav-logo rounded-full p-1 inline-flex items-center justify-center overflow-hidden shrink-0" style="width:var(--nav-h);height:var(--nav-h);background:var(--base,#000)">
           <img src="${this.logo}" alt="${this.logoAlt}" class="pill-nav-logo-img w-full h-full object-cover block" />
         </a>
 
-        <div class="pill-nav-items relative items-center rounded-full flex ml-1.5 md:ml-2 overflow-x-auto overflow-y-hidden" style="height:var(--nav-h);background:var(--base,#000);scrollbar-width:none;-ms-overflow-style:none">
+        <div class="pill-nav-items relative items-center rounded-full flex ml-1.5 overflow-x-auto overflow-y-hidden" style="height:var(--nav-h);background:var(--base,#000);scrollbar-width:none;-ms-overflow-style:none">
           <style>.pill-nav-items::-webkit-scrollbar{display:none;}</style>
           <ul role="menubar" class="list-none flex items-stretch m-0 p-[3px] h-full shrink-0" style="gap:var(--pill-gap)">
             ${this.items.map((item, i) => {
               const isActive = this.activeHref === item.href;
               return `
                 <li role="none" class="flex h-full shrink-0">
-                  <a role="menuitem" href="${item.href}" class="pill-nav-item relative overflow-hidden inline-flex items-center justify-center h-full no-underline rounded-full box-border font-semibold text-[13px] md:text-[16px] leading-[0] uppercase tracking-[0.2px] whitespace-nowrap cursor-pointer px-0" style="background:var(--pill-bg,#fff);color:var(--pill-text,var(--base,#000));padding-left:var(--pill-pad-x);padding-right:var(--pill-pad-x)" data-index="${i}">
+                  <a role="menuitem" href="${item.href}" class="pill-nav-item relative overflow-hidden inline-flex items-center justify-center h-full no-underline rounded-full box-border font-semibold text-[11px] sm:text-[12px] md:text-[15px] leading-[0] uppercase tracking-[0.3px] whitespace-nowrap cursor-pointer px-0" style="background:var(--pill-bg,#fff);color:var(--pill-text,var(--base,#000));padding-left:var(--pill-pad-x);padding-right:var(--pill-pad-x)" data-index="${i}">
                     <span class="hover-circle absolute left-1/2 bottom-0 rounded-full z-[1] block pointer-events-none" style="background:var(--base,#000);will-change:transform" aria-hidden="true"></span>
                     <span class="label-stack relative inline-block leading-[1] z-[2]">
                       <span class="pill-label relative z-[2] inline-block leading-[1]" style="will-change:transform">${item.label}</span>
                       <span class="pill-label-hover absolute left-0 top-0 z-[3] inline-block" style="color:var(--hover-text,#fff);will-change:transform,opacity" aria-hidden="true">${item.label}</span>
                     </span>
-                    ${isActive ? `<span class="absolute left-1/2 -bottom-[6px] -translate-x-1/2 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full z-[4]" style="background:var(--base,#000)" aria-hidden="true"></span>` : ''}
+                    ${isActive ? `<span class="absolute left-1/2 -bottom-[6px] -translate-x-1/2 w-2 h-2 md:w-2.5 md:h-2.5 rounded-full z-[4]" style="background:var(--base,#000)" aria-hidden="true"></span>` : ''}
                   </a>
                 </li>
               `;
@@ -196,12 +196,12 @@ class PillNav {
 
   runInitialAnimation() {
     if (this.logoRef) {
-      gsap.set(this.logoRef, { scale: 0 });
-      gsap.to(this.logoRef, { scale: 1, duration: 0.6, ease: this.ease });
+      gsap.set(this.logoRef, { scale: 0, opacity: 0 });
+      gsap.to(this.logoRef, { scale: 1, opacity: 1, duration: 0.5, ease: this.ease });
     }
     if (this.navItemsRef) {
-      gsap.set(this.navItemsRef, { width: 0, overflow: 'hidden' });
-      gsap.to(this.navItemsRef, { width: 'auto', duration: 0.6, ease: this.ease });
+      gsap.set(this.navItemsRef, { width: 0, overflow: 'hidden', opacity: 0 });
+      gsap.to(this.navItemsRef, { width: 'auto', opacity: 1, duration: 0.5, delay: 0.15, ease: this.ease });
     }
   }
 }
