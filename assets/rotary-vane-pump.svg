@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%" class="w-full h-full text-indigo-400">
+  <defs>
+    <linearGradient id="pumpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="baseGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#84cc16;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#0b0f19;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#0f172a" rx="16"/>
+  <circle cx="100" cy="110" r="70" fill="url(#baseGlow)" />
+  
+  <!-- Electric Drive Motor -->
+  <rect x="42" y="70" width="58" height="60" rx="4" fill="#334155" stroke="#64748b" stroke-width="2"/>
+  <line x1="48" y1="80" x2="48" y2="120" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
+  <line x1="56" y1="80" x2="56" y2="120" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
+  <line x1="64" y1="80" x2="64" y2="120" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Coupling flange -->
+  <rect x="100" y="82" width="12" height="36" fill="#475569" stroke="#334155" stroke-width="1"/>
+  
+  <!-- Vacuum Pump Head (Rotary Vane Chamber) -->
+  <rect x="112" y="60" width="52" height="80" rx="6" fill="#1e293b" stroke="url(#pumpGrad)" stroke-width="2.5"/>
+  <circle cx="138" cy="100" r="16" fill="#334155" opacity="0.3"/>
+  <line x1="138" y1="84" x2="138" y2="116" stroke="url(#pumpGrad)" stroke-width="1.5"/>
+  <line x1="122" y1="100" x2="154" y2="100" stroke="url(#pumpGrad)" stroke-width="1.5"/>
+  
+  <!-- Intake / Exhaust Flanges -->
+  <path d="M 125 60 L 125 45 L 132 45" fill="none" stroke="url(#pumpGrad)" stroke-width="3"/>
+  <path d="M 150 60 L 150 45 L 143 45" fill="none" stroke="url(#pumpGrad)" stroke-width="3"/>
+  
+  <!-- Common baseplate -->
+  <rect x="36" y="140" width="134" height="10" rx="2" fill="#475569"/>
+</svg>

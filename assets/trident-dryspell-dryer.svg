@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%" class="w-full h-full text-indigo-400">
+  <defs>
+    <linearGradient id="dryerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" /> <!-- Trident Cyan -->
+      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="baseGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#0b0f19;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#0f172a" rx="16"/>
+  <circle cx="100" cy="110" r="70" fill="url(#baseGlow)" />
+  
+  <!-- Dual Desiccant Cylindrical Towers -->
+  <!-- Left Tower -->
+  <rect x="62" y="40" width="28" height="110" rx="10" fill="#1e293b" stroke="url(#dryerGrad)" stroke-width="2.5"/>
+  <rect x="68" y="48" width="16" height="94" rx="4" fill="#334155" opacity="0.3"/>
+  <!-- Right Tower -->
+  <rect x="110" y="40" width="28" height="110" rx="10" fill="#1e293b" stroke="url(#dryerGrad)" stroke-width="2.5"/>
+  <rect x="116" y="48" width="16" height="94" rx="4" fill="#334155" opacity="0.3"/>
+  
+  <!-- Interconnecting manifold pipes -->
+  <path d="M 76 55 L 124 55" fill="none" stroke="url(#dryerGrad)" stroke-width="4"/>
+  <path d="M 76 135 L 124 135" fill="none" stroke="url(#dryerGrad)" stroke-width="4"/>
+  
+  <!-- Center Control Block (Dryspell Panel) -->
+  <rect x="85" y="80" width="30" height="32" rx="3" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+  <circle cx="100" cy="91" r="4" fill="#06b6d4" />
+  <line x1="92" y1="102" x2="108" y2="102" stroke="#ef4444" stroke-width="2"/>
+  
+  <!-- Supporting Base -->
+  <rect x="52" y="150" width="96" height="10" rx="2" fill="#475569"/>
+</svg>

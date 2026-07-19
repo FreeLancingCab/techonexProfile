@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%" class="w-full h-full text-indigo-400">
+  <defs>
+    <linearGradient id="compressorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" /> <!-- Hitachi Orange -->
+      <stop offset="100%" style="stop-color:#c2410c;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="baseGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#0b0f19;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#0f172a" rx="16"/>
+  <circle cx="100" cy="110" r="70" fill="url(#baseGlow)" />
+  
+  <!-- Compressor Box Frame -->
+  <rect x="50" y="50" width="100" height="100" rx="10" fill="#1e293b" stroke="url(#compressorGrad)" stroke-width="3"/>
+  <rect x="58" y="58" width="84" height="84" rx="6" fill="#334155" opacity="0.4"/>
+  
+  <!-- Grill ventilation vents -->
+  <line x1="65" y1="70" x2="115" y2="70" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+  <line x1="65" y1="80" x2="115" y2="80" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+  <line x1="65" y1="90" x2="115" y2="90" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Digital Control Screen -->
+  <rect x="120" y="68" width="22" height="26" rx="2" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
+  <circle cx="127" cy="75" r="2" fill="#22c55e" />
+  <circle cx="135" cy="75" r="2" fill="#eab308" />
+  <line x1="124" y1="84" x2="138" y2="84" stroke="#06b6d4" stroke-width="2"/>
+  
+  <!-- Pipe Outlets -->
+  <path d="M 150 120 L 175 120 L 175 130" fill="none" stroke="#f97316" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="175" cy="130" r="4" fill="#cbd5e1" />
+  
+  <!-- Castors/Feet -->
+  <rect x="62" y="150" width="16" height="8" rx="2" fill="#475569"/>
+  <rect x="122" y="150" width="16" height="8" rx="2" fill="#475569"/>
+</svg>

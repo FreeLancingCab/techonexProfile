@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technoex Trading Corporation - Air Compressors, Dryers & UPS Systems</title>
+  <meta name="description"
+    content="Technoex Trading Corporation Pvt. Ltd. (Faridabad, Haryana) is an authorized supplier of Hitachi Air Compressors, Trident Dryspell Air Dryers, and Uniline Online UPS Systems. Established since 2009.">
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Custom Overrides & Keyframe Animations -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- Fixed Dot Pattern Background -->
+  <div class="dot-pattern-bg"></div>
+
+  <!-- Subtle glow background effect behind header -->
+  <div
+    class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-24 md:h-32 bg-gradient-to-b from-cyan-400/10 to-transparent blur-xl pointer-events-none z-30 opacity-70">
+  </div>
+
+  <!-- PillNav will be initialized here -->
+  <div id="pill-nav-root"></div>
+
+  <!-- Mounting Point for router.js -->
+  <main id="app" class="flex-grow transition-opacity duration-150 ease-in-out"></main>
+
+  <!-- Footer Section - Light Theme -->
+  <footer class="bg-white/80 backdrop-blur-md border-t border-cyan-200/50 relative z-10">
+    <div class="h-1 w-full bg-gradient-to-r from-[#003B73] via-[#0077C8] to-[#00AEEF]"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+
+      <!-- Col 1: Bio -->
+      <div class="md:col-span-4 space-y-4">
+        <a href="#home" class="flex items-center gap-3">
+          <img src="assets/complogoRm.png" alt="Technoex Trading Corporation Logo" class="h-9 w-auto object-contain" />
+          <span class="text-base font-extrabold font-display text-slate-800">Technoex Trading</span>
+        </a>
+        <p class="text-xs text-slate-500 leading-relaxed font-light">
+          Authorized distributor of elite industrial automation hardware. Supplying Hitachi air compressors, Trident
+          desiccant dryers, Uniline online UPS cabinets, and custom engineering piping networks since 2009.
+        </p>
+        
+        <!-- Map Button -->
+        <div class="map-btn-wrapper">
+          <svg height="0" width="0">
+            <filter id="land">
+              <feTurbulence result="turb" numOctaves="7" baseFrequency="0.006" type="fractalNoise"></feTurbulence>
+              <feDisplacementMap yChannelSelector="G" xChannelSelector="R" scale="700" in="SourceGraphic" in2="turb"></feDisplacementMap>
+            </filter>
+          </svg>
+          <a href="https://maps.app.goo.gl/LgDJbdfZ5CmTvip79" target="_blank" rel="noreferrer noopener" class="map-btn">View on Map</a>
+          <div class="pinpoint"></div>
+          <div class="map-container">
+            <div class="map fold-1"></div>
+            <div class="map fold-2"></div>
+            <div class="map fold-3"></div>
+            <div class="map fold-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 2: Products Categories -->
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Product Inventory</h4>
+        <ul class="space-y-2 text-xs text-slate-500">
+          <li><a href="#products" class="hover:text-[#0077C8] transition-colors">Air Compressors</a></li>
+          <li><a href="#products" class="hover:text-[#0077C8] transition-colors">Trident Air Dryers</a></li>
+          <li><a href="#products" class="hover:text-[#0077C8] transition-colors">Online UPS Systems</a></li>
+          <li><a href="#products" class="hover:text-[#0077C8] transition-colors">Vacuum Pumps</a></li>
+          <li><a href="#products" class="hover:text-[#0077C8] transition-colors">Servo Stabilizers</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Resources -->
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Documentation</h4>
+        <ul class="space-y-2 text-xs text-slate-500">
+          <li><a href="#catalog" class="hover:text-[#0077C8] transition-colors">Download Catalog</a></li>
+          <li><a href="#terms" class="hover:text-[#0077C8] transition-colors">Distributor Policies</a></li>
+          <li><a href="#terms" class="hover:text-[#0077C8] transition-colors">AMC Terms & SLAs</a></li>
+          <li><a href="mailto:support@technoex.com" class="hover:text-[#0077C8] transition-colors">Request Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Newsletter -->
+      <div class="md:col-span-4 space-y-4">
+        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Engineering Digest</h4>
+        <div class="subscribe-card">
+          <span class="card__title">Subscribe</span>
+          <p class="card__content">Get fresh web design resources delivered straight to your inbox every week.</p>
+          <div class="card__form">
+            <input placeholder="Your Email" type="email" required>
+            <button class="sign-up" type="submit" onclick="event.preventDefault(); alert('Subscribed successfully!');">Sign up</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="border-t border-slate-100 py-6 text-center text-[10px] text-slate-400">
+      &copy; <span id="year">2026</span> Technoex Trading Corporation Pvt. Ltd. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Core App Scripts (Load order is critical) -->
+  <script src="js/pill-nav.js"></script>
+  <script src="js/masonry.js"></script>
+  <script src="js/logo-loop.js"></script>
+  <script src="js/shuffle-hero.js"></script>
+
+  <script>
+    document.getElementById("year").innerText = new Date().getFullYear();
+
+    // Initialize PillNav
+    const pillNav = new PillNav({
+      logo: 'assets/complogoRm.png',
+      logoAlt: 'Technoex Trading Corporation Logo',
+      items: [
+        { label: 'Home', href: '#home' },
+        { label: 'Products', href: '#products' },
+        { label: 'Catalog', href: '#catalog' },
+        { label: 'Contact', href: '#contact' }
+      ],
+      activeHref: '#home',
+      baseColor: '#0077C8',
+      pillColor: '#ffffff',
+      hoveredPillTextColor: '#ffffff',
+      pillTextColor: '#000000',
+      ease: 'power2.easeOut',
+      initialLoadAnimation: true
+    });
+  </script>
+
+  <script src="js/data.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/router.js"></script>
+
+</body>
+
+</html>
