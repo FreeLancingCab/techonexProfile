@@ -33,17 +33,17 @@ const PageTemplates = {
         <div class="absolute top-20 right-10 w-72 h-72 bg-[#0077C8]/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-10 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl"></div>
 
-        <div class="w-full max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 relative z-10">
+        <div class="w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-6 sm:gap-8 lg:gap-12 relative z-10">
           
           <!-- Left Content -->
-          <div class="space-y-4 md:space-y-6 text-center lg:text-left">
+          <div class="space-y-3 sm:space-y-4 md:space-y-6 text-center lg:text-left">
             <span class="inline-block px-4 py-1.5 text-[10px] font-bold tracking-widest text-[#0077C8] bg-[#0077C8]/10 border border-[#0077C8]/20 rounded-full uppercase">
               Corporate Showroom
             </span>
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold font-display text-slate-900 leading-tight">
+            <h1 class="text-[28px] sm:text-4xl md:text-6xl font-extrabold font-display text-slate-900 leading-tight">
               Technoex Trading Corporation
             </h1>
-            <p class="text-sm md:text-lg text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
+            <p class="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
               Authorized distributor for Hitachi, Trident & Uniline. Industrial compressors, dryers, and UPS systems since 2009.
             </p>
             <div class="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
@@ -57,7 +57,7 @@ const PageTemplates = {
           </div>
 
           <!-- Right Side - Shuffle Grid -->
-          <div id="shuffle-grid" class="grid h-[280px] sm:h-[350px] md:h-[420px] gap-1 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 mx-auto w-full max-w-[320px] sm:max-w-[400px] md:max-w-none" style="grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr);"></div>
+          <div id="shuffle-grid" class="grid h-[320px] sm:h-[380px] md:h-[420px] gap-1 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 mx-auto w-full max-w-[340px] sm:max-w-[400px] md:max-w-none" style="grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr);"></div>
 
         </div>
       </section>

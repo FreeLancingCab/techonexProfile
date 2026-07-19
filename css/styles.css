@@ -1189,15 +1189,15 @@ body {
 /* Hero shuffle grid mobile optimization */
 @media (max-width: 639px) {
   #shuffle-grid {
-    max-width: 280px;
-    height: 260px !important;
+    max-width: 340px;
+    height: 320px !important;
   }
 }
 
 @media (min-width: 640px) and (max-width: 767px) {
   #shuffle-grid {
-    max-width: 360px;
-    height: 320px !important;
+    max-width: 400px;
+    height: 380px !important;
   }
 }
 
