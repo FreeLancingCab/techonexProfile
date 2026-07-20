@@ -35,18 +35,18 @@ const PageTemplates = {
 
         <div class="w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-6 sm:gap-8 lg:gap-12 relative z-10">
           
-          <!-- Left Content -->
-          <div class="space-y-3 sm:space-y-4 md:space-y-6 text-center lg:text-left">
-            <span class="inline-block px-4 py-1.5 text-[10px] font-bold tracking-widest text-[#0077C8] bg-[#0077C8]/10 border border-[#0077C8]/20 rounded-full uppercase">
+          <!-- Left Content (Hero Entrance Animation) -->
+          <div class="space-y-3 sm:space-y-4 md:space-y-6 text-center lg:text-left hero-content">
+            <span class="hero-badge inline-block px-4 py-1.5 text-[10px] font-bold tracking-widest text-[#0077C8] bg-[#0077C8]/10 border border-[#0077C8]/20 rounded-full uppercase opacity-0">
               Corporate Showroom
             </span>
-            <h1 class="text-[28px] sm:text-4xl md:text-6xl font-extrabold font-display text-slate-900 leading-tight">
+            <h1 class="hero-title text-[28px] sm:text-4xl md:text-6xl font-extrabold font-display text-slate-900 leading-tight opacity-0">
               Technoex Trading Corporation
             </h1>
-            <p class="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
+            <p class="hero-desc text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-0">
               Authorized distributor for Hitachi, Trident & Uniline. Industrial compressors, dryers, and UPS systems since 2009.
             </p>
-            <div class="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
+            <div class="hero-buttons flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start opacity-0">
               <a href="#products" class="px-5 py-2.5 md:px-6 md:py-3 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-xs md:text-sm shadow-lg shadow-[#0077C8]/20 hover:shadow-[#0077C8]/30 hover:-translate-y-0.5 transition-all duration-200">
                 Explore Products
               </a>
@@ -57,14 +57,14 @@ const PageTemplates = {
           </div>
 
           <!-- Right Side - Shuffle Grid -->
-          <div id="shuffle-grid" class="grid h-[320px] sm:h-[380px] md:h-[420px] gap-1 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 mx-auto w-full max-w-[340px] sm:max-w-[400px] md:max-w-none" style="grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr);"></div>
+          <div id="shuffle-grid" class="hero-grid grid h-[320px] sm:h-[380px] md:h-[420px] gap-1 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 mx-auto w-full max-w-[340px] sm:max-w-[400px] md:max-w-none opacity-0" style="grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr);"></div>
 
         </div>
       </section>
 
       <!-- Company Profile Details Section -->
       <section class="pt-6 pb-2 px-6 bg-white/50 backdrop-blur-sm border-y border-slate-200/60 relative z-10">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 relative z-10">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 relative z-10 scroll-reveal-stagger">
           <a class="card1" href="#">
             <h3 class="text-lg font-bold text-slate-800 mb-1">${CompanyData.profile.location}</h3>
             <p class="small">HQ Location</p>
@@ -99,7 +99,7 @@ const PageTemplates = {
       <!-- Masonry Gallery Section -->
       <section class="py-24 px-6 relative z-10 bg-gradient-to-b from-slate-50/80 to-white/50 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto relative z-10">
-          <div class="text-center mb-12">
+          <div class="text-center mb-12 scroll-reveal">
             <span class="inline-block px-4 py-1.5 text-[10px] font-bold tracking-widest text-[#0077C8] bg-[#0077C8]/10 border border-[#0077C8]/20 rounded-full uppercase mb-4">Our Products</span>
             <h2 class="text-3xl md:text-4xl font-bold font-display text-slate-950 mb-3">Product Showcase</h2>
             <p class="text-slate-500 max-w-2xl mx-auto text-sm">
@@ -113,7 +113,7 @@ const PageTemplates = {
       <!-- Timeline Section (Transparent background) -->
       <section class="py-24 px-6 relative z-10 bg-transparent border-b border-slate-200/60">
         <div class="max-w-6xl mx-auto relative z-10">
-          <div class="text-center mb-16">
+          <div class="text-center mb-16 scroll-reveal">
             <h2 class="text-3xl md:text-4xl font-bold font-display text-slate-950 mb-3">Our History</h2>
             <p class="text-slate-500 max-w-2xl mx-auto text-sm">
               Supporting Indian manufacturing with specialized compressors, dryers, and backup systems since 2009.
@@ -132,7 +132,7 @@ const PageTemplates = {
       <!-- Future Blueprint (Semi-transparent Glass) -->
       <section class="py-24 px-6 relative z-10 bg-gradient-to-b from-slate-100 to-white">
         <div class="max-w-6xl mx-auto relative z-10 mb-12">
-          <div class="text-center">
+          <div class="text-center scroll-reveal">
             <span class="inline-block px-4 py-1.5 text-[10px] font-bold tracking-widest text-[#0077C8] bg-[#0077C8]/10 border border-[#0077C8]/20 rounded-full uppercase mb-4">Trusted Partners</span>
             <h2 class="text-3xl md:text-4xl font-bold font-display text-slate-950 mb-3">Our Brand Partners</h2>
             <p class="text-slate-500 max-w-2xl mx-auto text-sm">
@@ -195,8 +195,8 @@ const PageTemplates = {
       </section>
 
       <!-- Detailed product modal overlay -->
-      <div id="product-modal" class="fixed inset-0 bg-slate-950/65 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-4 pt-16 sm:pt-20 opacity-0 pointer-events-none transition-all duration-300">
-        <div class="relative bg-white border border-slate-200 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl scale-95 transition-all duration-300 max-h-[85vh] flex flex-col modal-content">
+      <div id="product-modal" class="fixed inset-0 bg-slate-950/65 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-4 pt-16 sm:pt-20 opacity-0 pointer-events-none">
+        <div class="relative bg-white border border-slate-200 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl scale-95 max-h-[85vh] flex flex-col modal-content">
           <button id="modal-close" class="absolute top-3 right-3 z-20 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors">
             <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
@@ -273,92 +273,104 @@ const PageTemplates = {
 
   // Catalog Download Page
   catalog: () => {
+    const catalogCards = CompanyData.catalogs.map((cat, index) => {
+      const iconSVG = PageTemplates.helpers.getIcon(cat.icon);
+      return `
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center bg-white/70 rounded-2xl border border-slate-200/80 p-5 md:p-8 glass shadow-md catalog-card" data-index="${index}">
+          
+          <!-- Book Cover Catalog -->
+          <div class="md:col-span-4 flex justify-center py-4">
+            <div class="relative w-40 h-52 sm:w-48 sm:h-60 bg-gradient-to-br ${cat.gradient} rounded-xl shadow-lg border border-white/10 p-4 sm:p-5 flex flex-col justify-between overflow-hidden group select-none hover:scale-[1.03] transition-transform duration-300">
+              <div class="absolute -right-10 -top-10 w-24 h-24 rounded-full bg-white/10 blur-lg"></div>
+              <div class="absolute -left-8 -bottom-8 w-20 h-20 rounded-full bg-white/5 blur-md"></div>
+              <div class="relative z-10">
+                <div class="flex justify-between items-start mb-3 sm:mb-4">
+                  <span class="text-[8px] sm:text-[9px] font-bold tracking-widest uppercase" style="color: ${cat.accent}cc">${cat.subtitle.split('&')[0].trim()}</span>
+                  <span class="text-[8px] sm:text-[9px] font-semibold px-1.5 sm:px-2 py-0.5 rounded-full" style="background: ${cat.accent}30; color: ${cat.accent}">PDF v${cat.version}</span>
+                </div>
+                <div class="mb-2 sm:mb-3" style="color: ${cat.accent}">${iconSVG}</div>
+                <h3 class="text-sm sm:text-base font-black font-display leading-tight text-white mb-1">TECHNOEX</h3>
+                <p class="text-[7px] sm:text-[8px] text-slate-300 leading-normal">${cat.subtitle}</p>
+              </div>
+
+              <div class="relative z-10 flex justify-between items-center border-t border-white/10 pt-3 sm:pt-4">
+                <div>
+                  <span class="block text-[7px] sm:text-[8px] uppercase" style="color: ${cat.accent}cc">Released</span>
+                  <span class="text-[10px] sm:text-xs font-semibold text-slate-200">${cat.releaseDate}</span>
+                </div>
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-white transition-colors" style="background: ${cat.accent}">
+                  <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Download form details -->
+          <div class="md:col-span-8 flex flex-col justify-center">
+            <h2 class="text-lg md:text-2xl font-bold text-slate-900 mb-2">${cat.title}</h2>
+            <p class="text-slate-600 text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
+              ${cat.description}
+            </p>
+
+            <div class="grid grid-cols-3 gap-2 sm:gap-3 mb-4 md:mb-6">
+              <div class="p-2 sm:p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
+                <span class="block text-[8px] sm:text-[9px] text-slate-400 uppercase font-semibold">Format</span>
+                <span class="text-[10px] sm:text-xs font-semibold text-slate-700">PDF Document</span>
+              </div>
+              <div class="p-2 sm:p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
+                <span class="block text-[8px] sm:text-[9px] text-slate-400 uppercase font-semibold">Size</span>
+                <span class="text-[10px] sm:text-xs font-semibold text-slate-700">${cat.fileSize}</span>
+              </div>
+              <div class="p-2 sm:p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
+                <span class="block text-[8px] sm:text-[9px] text-slate-400 uppercase font-semibold">Pages</span>
+                <span class="text-[10px] sm:text-xs font-semibold text-slate-700">${cat.pageCount} Pages</span>
+              </div>
+            </div>
+
+            <div id="download-panel-${cat.id}">
+              <form class="download-form space-y-3 md:space-y-4" data-catalog-id="${cat.id}">
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                  <input 
+                    type="email" 
+                    class="client-email flex-1 px-3 sm:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm shadow-sm"
+                    required 
+                    placeholder="Enter your email to download" 
+                  />
+                  <button 
+                    type="submit" 
+                    class="px-5 sm:px-6 py-2.5 rounded-xl text-white font-semibold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group whitespace-nowrap"
+                    style="background: linear-gradient(135deg, ${cat.accent}cc, ${cat.accent})"
+                  >
+                    <span>Request PDF</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                  </button>
+                </div>
+                <p class="text-[10px] text-slate-400">Upon request, you will receive immediate download authorization. We secure email credentials.</p>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+      `;
+    }).join("");
+
     return `
-      <section class="py-10 md:py-16 px-4 md:px-6 max-w-5xl mx-auto relative z-10 min-h-[80vh] flex flex-col justify-center animate-fade-in-up">
+      <section class="py-10 md:py-16 px-4 md:px-6 max-w-6xl mx-auto relative z-10 min-h-[80vh]">
         <div class="relative z-10">
           <div class="text-center mb-8 md:mb-12 mt-6">
-            <h1 class="text-3xl md:text-5xl font-bold font-display text-slate-950 mb-3">Technical Catalog</h1>
+            <span class="inline-block px-4 py-1.5 text-[10px] font-bold tracking-widest text-[#0077C8] bg-[#0077C8]/10 border border-[#0077C8]/20 rounded-full uppercase mb-4">Download Center</span>
+            <h1 class="text-3xl md:text-5xl font-bold font-display text-slate-950 mb-3">Technical Catalogs</h1>
             <p class="text-slate-500 max-w-xl mx-auto text-sm">
-              Download our complete engineering catalog including sizing charts, layouts, electrical parameters, and specifications.
+              Download category-specific engineering catalogs including sizing charts, layouts, electrical parameters, and specifications.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center bg-white/70 rounded-2xl border border-slate-200/80 p-5 md:p-8 glass shadow-md">
-            
-            <!-- Book Cover Catalog -->
-            <div class="md:col-span-5 flex justify-center py-4">
-              <div class="relative w-44 h-56 sm:w-52 sm:h-64 bg-gradient-to-br from-[#003B73] via-[#001a3a] to-slate-900 rounded-xl shadow-lg border border-[#0077C8]/20 p-4 sm:p-5 flex flex-col justify-between overflow-hidden group select-none">
-                <div class="absolute -right-10 -top-10 w-24 h-24 rounded-full bg-white/10 blur-lg"></div>
-                <div class="relative z-10">
-                  <div class="flex justify-between items-start mb-3 sm:mb-4">
-                    <span class="text-[8px] sm:text-[9px] font-bold tracking-widest text-[#b0e0ff] uppercase">Product Specifications</span>
-                    <span class="text-[8px] sm:text-[9px] bg-[#0077C8]/30 text-[#b0e0ff] font-semibold px-1.5 sm:px-2 py-0.5 rounded-full">PDF v${CompanyData.catalog.version}</span>
-                  </div>
-                  <h3 class="text-base sm:text-lg font-black font-display leading-tight text-white mb-1">TECHNOEX</h3>
-                  <p class="text-[8px] sm:text-[9px] text-slate-300 leading-normal">Air Compressors, Dryers, Vacuum Pumps, and UPS Systems.</p>
-                </div>
-
-                <div class="relative z-10 flex justify-between items-center border-t border-[#002a52] pt-3 sm:pt-4">
-                  <div>
-                    <span class="block text-[7px] sm:text-[8px] text-[#b0e0ff] uppercase">Released</span>
-                    <span class="text-[10px] sm:text-xs font-semibold text-slate-200">${CompanyData.catalog.releaseDate}</span>
-                  </div>
-                  <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#0077C8] flex items-center justify-center text-white hover:bg-[#0077C8] transition-colors">
-                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Download forms details -->
-            <div class="md:col-span-7 flex flex-col justify-center">
-              <h2 class="text-lg md:text-2xl font-bold text-slate-900 mb-2">Technical Product Guide</h2>
-              <p class="text-slate-600 text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
-                Features detail charts for the <strong class="text-[#0077C8]">Piston Air Compressor</strong>, flow tables for the <strong class="text-[#0077C8]">Trident Dryspell</strong>, electrical load criteria for the <strong class="text-[#0077C8]">Online UPS Cabinet</strong>, and accessories sizing metrics.
-              </p>
-
-              <div class="grid grid-cols-3 gap-2 sm:gap-3 mb-4 md:mb-6">
-                <div class="p-2 sm:p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
-                  <span class="block text-[8px] sm:text-[9px] text-slate-400 uppercase font-semibold">Format</span>
-                  <span class="text-[10px] sm:text-xs font-semibold text-slate-700">PDF Document</span>
-                </div>
-                <div class="p-2 sm:p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
-                  <span class="block text-[8px] sm:text-[9px] text-slate-400 uppercase font-semibold">Size</span>
-                  <span class="text-[10px] sm:text-xs font-semibold text-slate-700">${CompanyData.catalog.fileSize}</span>
-                </div>
-                <div class="p-2 sm:p-3 bg-slate-50 rounded-xl border border-slate-200 text-center shadow-inner">
-                  <span class="block text-[8px] sm:text-[9px] text-slate-400 uppercase font-semibold">Pages</span>
-                  <span class="text-[10px] sm:text-xs font-semibold text-slate-700">${CompanyData.catalog.pageCount} Pages</span>
-                </div>
-              </div>
-
-              <div id="download-panel">
-                <form id="download-form" class="space-y-3 md:space-y-4">
-                  <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                    <input 
-                      type="email" 
-                      id="client-email" 
-                      required 
-                      placeholder="Enter your email to download" 
-                      class="flex-1 px-3 sm:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm shadow-sm"
-                    />
-                    <button 
-                      type="submit" 
-                      class="px-5 sm:px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-[#0077C8]/25 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group whitespace-nowrap"
-                    >
-                      <span>Request PDF</span>
-                      <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <p class="text-[10px] text-slate-400">Upon request, you will receive immediate download authorization. We secure email credentials.</p>
-                </form>
-              </div>
-            </div>
-            
+          <div class="space-y-6 md:space-y-8">
+            ${catalogCards}
           </div>
         </div>
       </section>
@@ -503,16 +515,28 @@ const PageTemplates = {
 
       const isCollapsed = content.style.maxHeight === "0px" || !content.style.maxHeight;
 
-      document.querySelectorAll('[id^="content-"]').forEach(el => el.style.maxHeight = "0px");
-      document.querySelectorAll('[id^="icon-"]').forEach(el => el.style.transform = "rotate(0deg)");
+      // Close all other accordions with GSAP
+      document.querySelectorAll('[id^="content-"]').forEach(el => {
+        if (el.id !== `content-${id}`) {
+          gsap.to(el, { maxHeight: 0, duration: 0.3, ease: 'power2.inOut' });
+        }
+      });
+      document.querySelectorAll('[id^="icon-"]').forEach(el => {
+        if (el.id !== `icon-${id}`) {
+          gsap.to(el, { rotation: 0, duration: 0.3, ease: 'power2.out' });
+          el.classList.remove("text-[#0077C8]");
+        }
+      });
 
       if (isCollapsed) {
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.style.transform = "rotate(180deg)";
+        // Open with GSAP
+        gsap.to(content, { maxHeight: content.scrollHeight + 20 + "px", duration: 0.4, ease: 'power2.out' });
+        gsap.to(icon, { rotation: 180, duration: 0.3, ease: 'power2.out' });
         icon.classList.add("text-[#0077C8]");
       } else {
-        content.style.maxHeight = "0px";
-        icon.style.transform = "rotate(0deg)";
+        // Close with GSAP
+        gsap.to(content, { maxHeight: 0, duration: 0.3, ease: 'power2.inOut' });
+        gsap.to(icon, { rotation: 0, duration: 0.3, ease: 'power2.out' });
         icon.classList.remove("text-[#0077C8]");
       }
     },
@@ -660,125 +684,161 @@ const PageTemplates = {
         </div>
       `;
 
-      modal.classList.remove("opacity-0", "pointer-events-none");
-      setTimeout(() => {
-        modal.querySelector(".relative").classList.remove("scale-95");
-      }, 50);
-
+      // Smooth scroll lock without layout jump
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.setProperty('--scrollbar-width', scrollbarWidth + 'px');
       document.body.classList.add("scroll-lock");
+
+      // GSAP modal entrance animation
+      const overlay = modal;
+      const content = modal.querySelector(".relative");
+      gsap.set(overlay, { opacity: 0, pointerEvents: 'auto' });
+      gsap.set(content, { scale: 0.92, opacity: 0, y: 20 });
+      
+      gsap.to(overlay, { opacity: 1, duration: 0.3, ease: 'power2.out' });
+      gsap.to(content, { scale: 1, opacity: 1, y: 0, duration: 0.35, ease: 'back.out(1.4)', delay: 0.05 });
     },
 
     closeProductModal: () => {
       const modal = document.getElementById("product-modal");
       if (!modal) return;
 
-      modal.querySelector(".relative").classList.add("scale-95");
-      modal.classList.add("opacity-0", "pointer-events-none");
+      const content = modal.querySelector(".relative");
       
-      document.body.classList.remove("scroll-lock");
-    },
-
-    setupCatalogDownload: () => {
-      const form = document.getElementById("download-form");
-      const panel = document.getElementById("download-panel");
-      if (!form || !panel) return;
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const email = document.getElementById("client-email").value;
-        if (!email) return;
-
-        panel.innerHTML = `
-          <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 animate-fade-in-up">
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-xs font-semibold text-slate-600 flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-[#0077C8] animate-spin" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Assembling specifications sheets...
-              </span>
-              <span id="download-percent" class="text-xs font-bold text-[#0077C8]">0%</span>
-            </div>
-            
-            <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden p-[1px] mb-3">
-              <div id="download-progress-bar" class="h-full bg-gradient-to-r from-[#003B73] via-indigo-500 to-[#0077C8] rounded-full transition-all duration-100 ease-out" style="width: 0%"></div>
-            </div>
-            <p class="text-[10px] text-slate-400">Securing file package for: <span class="text-slate-600 font-semibold">${email}</span></p>
-          </div>
-        `;
-
-        const progressBar = document.getElementById("download-progress-bar");
-        const percentText = document.getElementById("download-percent");
-        
-        let progress = 0;
-        const interval = setInterval(() => {
-          progress += Math.floor(Math.random() * 8) + 6;
-          if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-            
-            setTimeout(() => {
-              panel.innerHTML = `
-                <div class="bg-indigo-50/50 p-5 rounded-xl border border-indigo-200 text-center animate-fade-in-up">
-                  <div class="w-9 h-9 rounded-full bg-[#0077C8]/10 border border-indigo-200 flex items-center justify-center mx-auto mb-3 text-[#0077C8]">
-                    <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <h3 class="text-base font-bold text-slate-900 mb-0.5">Authorization Granted!</h3>
-                  <p class="text-slate-500 text-xs mb-3">The file <strong>${CompanyData.catalog.filename}</strong> has downloaded.</p>
-                  <button 
-                    onclick="PageTemplates.handlers.resetCatalogDownload()" 
-                    class="px-4 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold text-xs transition-colors"
-                  >
-                    Request Again
-                  </button>
-                </div>
-              `;
-
-              const dummyAnchor = document.createElement("a");
-              dummyAnchor.href = "assets/catalog.pdf";
-              dummyAnchor.download = CompanyData.catalog.filename;
-              document.body.appendChild(dummyAnchor);
-              dummyAnchor.click();
-              document.body.removeChild(dummyAnchor);
-            }, 400);
-          }
-
-          if (progressBar) progressBar.style.width = `${progress}%`;
-          if (percentText) percentText.innerText = `${progress}%`;
-        }, 80);
+      // GSAP modal exit animation
+      gsap.to(content, { scale: 0.95, opacity: 0, y: 10, duration: 0.2, ease: 'power2.in' });
+      gsap.to(modal, { 
+        opacity: 0, duration: 0.25, ease: 'power2.in', delay: 0.05,
+        onComplete: () => {
+          modal.style.pointerEvents = 'none';
+          document.body.classList.remove("scroll-lock");
+          document.documentElement.style.removeProperty('--scrollbar-width');
+        }
       });
     },
 
-    resetCatalogDownload: () => {
-      const panel = document.getElementById("download-panel");
-      if (panel) {
-        panel.outerHTML = `
-          <div id="download-panel">
-            <form id="download-form" class="space-y-4">
-              <div class="flex flex-col sm:flex-row gap-3">
-                <input 
-                  type="email" 
-                  id="client-email" 
-                  required 
-                  placeholder="Enter your email to download" 
-                  class="flex-1 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm shadow-sm"
-                />
-                <button 
-                  type="submit" 
-                  class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-indigo-600/25 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group whitespace-nowrap"
-                >
-                  <span>Request PDF</span>
-                  <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    setupCatalogDownload: () => {
+      const forms = document.querySelectorAll(".download-form");
+      if (!forms.length) return;
+
+      forms.forEach(form => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const catalogId = form.getAttribute("data-catalog-id");
+          const email = form.querySelector(".client-email").value;
+          if (!email || !catalogId) return;
+
+          const cat = CompanyData.catalogs.find(c => c.id === catalogId);
+          if (!cat) return;
+
+          const panel = document.getElementById(`download-panel-${catalogId}`);
+          if (!panel) return;
+
+          panel.innerHTML = `
+            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 animate-fade-in-up">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-semibold text-slate-600 flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 animate-spin" style="color: ${cat.accent}" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                </button>
+                  Assembling specifications sheets...
+                </span>
+                <span class="download-percent text-xs font-bold" style="color: ${cat.accent}">0%</span>
               </div>
-              <p class="text-[10px] text-slate-400">Upon request, you will receive immediate download authorization. We secure email credentials.</p>
-            </form>
-          </div>
+              
+              <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden p-[1px] mb-3">
+                <div class="download-progress-bar h-full rounded-full transition-all duration-100 ease-out" style="width: 0%; background: linear-gradient(135deg, ${cat.accent}cc, ${cat.accent})"></div>
+              </div>
+              <p class="text-[10px] text-slate-400">Securing file package for: <span class="text-slate-600 font-semibold">${email}</span></p>
+            </div>
+          `;
+
+          const progressBar = panel.querySelector(".download-progress-bar");
+          const percentText = panel.querySelector(".download-percent");
+          
+          let progress = 0;
+          const interval = setInterval(() => {
+            progress += Math.floor(Math.random() * 8) + 6;
+            if (progress >= 100) {
+              progress = 100;
+              clearInterval(interval);
+              
+              setTimeout(() => {
+                panel.innerHTML = `
+                  <div class="p-5 rounded-xl border text-center animate-fade-in-up" style="background: ${cat.accent}08; border-color: ${cat.accent}30">
+                    <div class="w-9 h-9 rounded-full border flex items-center justify-center mx-auto mb-3" style="background: ${cat.accent}10; border-color: ${cat.accent}20; color: ${cat.accent}">
+                      <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 mb-0.5">Authorization Granted!</h3>
+                    <p class="text-slate-500 text-xs mb-3">The file <strong>${cat.filename}</strong> is ready.</p>
+                    <div class="flex gap-2 justify-center">
+                      <a href="${cat.downloadUrl || cat.file}" target="_blank" rel="noopener noreferrer"
+                        class="px-4 py-1.5 rounded-lg text-white font-semibold text-xs transition-colors inline-flex items-center gap-1.5"
+                        style="background: ${cat.accent}"
+                      >
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Download PDF
+                      </a>
+                      <button 
+                        onclick="PageTemplates.handlers.resetCatalogDownload('${catalogId}')" 
+                        class="px-4 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold text-xs transition-colors"
+                      >
+                        Request Again
+                      </button>
+                    </div>
+                  </div>
+                `;
+
+                // For Google Drive links, open in new tab instead of dummy anchor
+                if (!cat.downloadUrl) {
+                  const dummyAnchor = document.createElement("a");
+                  dummyAnchor.href = cat.file;
+                  dummyAnchor.download = cat.filename;
+                  document.body.appendChild(dummyAnchor);
+                  dummyAnchor.click();
+                  document.body.removeChild(dummyAnchor);
+                }
+              }, 400);
+            }
+
+            if (progressBar) progressBar.style.width = `${progress}%`;
+            if (percentText) percentText.innerText = `${progress}%`;
+          }, 80);
+        });
+      });
+    },
+
+    resetCatalogDownload: (catalogId) => {
+      const cat = CompanyData.catalogs.find(c => c.id === catalogId);
+      if (!cat) return;
+
+      const panel = document.getElementById(`download-panel-${catalogId}`);
+      if (panel) {
+        panel.innerHTML = `
+          <form class="download-form space-y-3 md:space-y-4" data-catalog-id="${catalogId}">
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+              <input 
+                type="email" 
+                class="client-email flex-1 px-3 sm:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm shadow-sm"
+                required 
+                placeholder="Enter your email to download" 
+              />
+              <button 
+                type="submit" 
+                class="px-5 sm:px-6 py-2.5 rounded-xl text-white font-semibold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group whitespace-nowrap"
+                style="background: linear-gradient(135deg, ${cat.accent}cc, ${cat.accent})"
+              >
+                <span>Request PDF</span>
+                <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+              </button>
+            </div>
+            <p class="text-[10px] text-slate-400">Upon request, you will receive immediate download authorization. We secure email credentials.</p>
+          </form>
         `;
         PageTemplates.handlers.setupCatalogDownload();
       }

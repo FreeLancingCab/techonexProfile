@@ -162,7 +162,90 @@ const CompanyData = {
     fileSize: "6.2 MB",
     pageCount: 48,
     releaseDate: "February 2026"
-  }
+  },
+
+  catalogs: [
+    {
+      id: "compressor-catalog",
+      title: "Technoex B Series Piston Air Compressor Catalogue",
+      subtitle: "Piston, Screw & Oil-Free Compressors",
+      description: "Complete specifications for these product lines: <strong class='text-[#0077C8]'>Piston Air Compressor</strong>, <strong class='text-[#0077C8]'>Hitachi Oil Free</strong>, <strong class='text-[#0077C8]'>M Series Screw</strong>, and <strong class='text-[#0077C8]'>Scroll Compressors</strong>.",
+      filename: "b_series_piston_air_compressor_catalogue.pdf",
+      version: "2026.1",
+      fileSize: "4.8 MB",
+      pageCount: 1,
+      releaseDate: "March 2026",
+      file: "https://drive.google.com/uc?export=download&id=1GgCGiJNHGAEzit3uY66ugCBvo_r-1awR",
+      downloadUrl: "https://drive.google.com/file/d/1GgCGiJNHGAEzit3uY66ugCBvo_r-1awR/view",
+      gradient: "from-[#003B73] via-[#001a3a] to-slate-900",
+      accent: "#0077C8",
+      icon: "compressor"
+    },
+    {
+      id: "dryer-catalog",
+      title: "Technoex Screw Compressor Catalog",
+      subtitle: "Desiccant, Refrigerated & Filtration",
+      description: "Detailed charts for <strong class='text-[#0077C8]'>Trident Dryspell Heatless</strong>, <strong class='text-[#0077C8]'>Coldspell Refrigerated</strong>, and <strong class='text-[#0077C8]'>Line Filter Systems</strong> with flow tables and dew point data.",
+      filename: "screw_compressor_catalog.pdf",
+      version: "2026.1",
+      fileSize: "3.5 MB",
+      pageCount: 4,
+      releaseDate: "May 2026",
+      file: "https://drive.google.com/uc?export=download&id=1P50hm6rvkfEWEtZEcWYNfApdDLJujDKb",
+      downloadUrl: "https://drive.google.com/file/d/1P50hm6rvkfEWEtZEcWYNfApdDLJujDKb/view?usp=drive_link",
+      gradient: "from-[#004D40] via-[#00251a] to-slate-900",
+      accent: "#00897B",
+      icon: "dryer"
+    },
+    {
+      id: "ups-catalog",
+      title: "Technoex M-Series Catalogue",
+      subtitle: "Online UPS & Servo Stabilizers",
+      description: "Electrical load criteria for <strong class='text-[#0077C8]'>Hitachi Hi-Rel Online UPS</strong>, <strong class='text-[#0077C8]'>Uniline UPS Systems</strong>, and <strong class='text-[#0077C8]'>Servo Voltage Stabilizers</strong> with wiring diagrams.",
+      filename: "m_series_catalogue.pdf",
+      version: "2026.1",
+      fileSize: "79 MB",
+      pageCount: 4,
+      releaseDate: "July 2026",
+      file: "https://drive.google.com/uc?export=download&id=1xIDWxgRk7MZ23TwkRuGlG1aPCK5o4ICe",
+      downloadUrl: "https://drive.google.com/file/d/1xIDWxgRk7MZ23TwkRuGlG1aPCK5o4ICe/view?usp=drive_link",
+      gradient: "from-[#4A148C] via-[#1a0533] to-slate-900",
+      accent: "#7C4DFF",
+      icon: "ups"
+    },
+    {
+      id: "vacuum-catalog",
+      title: "Technoex Dry Spell Plus Catalogue",
+      subtitle: "Rotary Vane & Piston Vacuum Systems",
+      description: "Performance specs for <strong class='text-[#0077C8]'>Rotary Vane Vacuum Pumps</strong> and <strong class='text-[#0077C8]'>Lubricated Piston Vacuum Pumps</strong> with vacuum level charts and motor data.",
+      filename: "dry_spell_plus_technoex_catalogue.pdf",
+      version: "2026.1",
+      fileSize: "3.9 MB",
+      pageCount: 2,
+      releaseDate: "March 2026",
+      file: "https://drive.google.com/uc?export=download&id=1L1UxhlQ7xh_RLniTvvX4RlEMzMzSd-IW",
+      downloadUrl: "https://drive.google.com/file/d/1L1UxhlQ7xh_RLniTvvX4RlEMzMzSd-IW/view?usp=drive_link",
+      gradient: "from-[#BF360C] via-[#331004] to-slate-900",
+      accent: "#FF5722",
+      icon: "vacuum"
+    },
+    {
+      id: "piping-catalog",
+      title: "Technoex Line Filters Catalogue",
+      subtitle: "PPR, SS Piping & Control Panels",
+      description: "Engineering layouts for <strong class='text-[#0077C8]'>PPR Pipeline Systems</strong>, <strong class='text-[#0077C8]'>SS Piping Modular</strong>, and <strong class='text-[#0077C8]'>Gas Control Panels</strong> with pressure ratings and assembly guides.",
+      filename: "technoex_line_filters_catalogue.pdf",
+      version: "2026.1",
+      fileSize: "3.2 MB",
+      pageCount: 2,
+      releaseDate: "July 2026",
+      file: "https://drive.google.com/uc?export=download&id=1LfKHBRg-UweRV6ZK2_AVKBA2e38YtBY6",
+      downloadUrl: "https://drive.google.com/file/d/1LfKHBRg-UweRV6ZK2_AVKBA2e38YtBY6/view?usp=drive_link",
+      gradient: "from-[#E65100] via-[#401700] to-slate-900",
+      accent: "#FF9800",
+      icon: "accessories"
+    }
+  ]
 };
 
 window.CompanyData = CompanyData;

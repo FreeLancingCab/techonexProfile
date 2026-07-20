@@ -9,6 +9,7 @@ class ShuffleHero {
     this.rows = options.rows || 4;
     this.timeoutId = null;
     this.cells = [];
+    this.isAnimating = false;
 
     this.init();
   }
@@ -27,8 +28,7 @@ class ShuffleHero {
 
     for (let i = 0; i < totalCells; i++) {
       const cell = document.createElement('div');
-      cell.className = 'relative overflow-hidden';
-      cell.style.transition = 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+      cell.className = 'relative overflow-hidden will-change-transform';
 
       if (shuffledImages[i]) {
         const img = document.createElement('img');
@@ -60,28 +60,48 @@ class ShuffleHero {
 
   startShuffle() {
     this.timeoutId = setInterval(() => {
-      this.shuffleGrid();
+      if (!this.isAnimating) {
+        this.shuffleGrid();
+      }
     }, this.interval);
   }
 
   shuffleGrid() {
+    if (this.isAnimating) return;
+    this.isAnimating = true;
+
     const shuffledImages = this.shuffle([...this.images]);
-    const delay = 80;
+    const staggerDelay = 0.04;
+
+    // Create a GSAP timeline for coordinated shuffle
+    const tl = gsap.timeline({
+      onComplete: () => { this.isAnimating = false; }
+    });
 
     this.cells.forEach((cell, i) => {
-      setTimeout(() => {
-        cell.style.opacity = '0';
-        cell.style.transform = 'scale(0.9)';
+      const img = cell.querySelector('img');
+      
+      // Phase 1: Fade out + slight scale down
+      tl.to(cell, {
+        opacity: 0,
+        scale: 0.92,
+        duration: 0.25,
+        ease: 'power2.in'
+      }, i * staggerDelay);
 
-        setTimeout(() => {
-          const img = cell.querySelector('img');
-          if (img && shuffledImages[i]) {
-            img.src = shuffledImages[i].src;
-          }
-          cell.style.opacity = '1';
-          cell.style.transform = 'scale(1)';
-        }, 300);
-      }, i * delay);
+      // Phase 2: Swap image and fade back in
+      tl.call(() => {
+        if (img && shuffledImages[i]) {
+          img.src = shuffledImages[i].src;
+        }
+      }, null, (i * staggerDelay) + 0.25);
+
+      tl.to(cell, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.35,
+        ease: 'power2.out'
+      }, (i * staggerDelay) + 0.28);
     });
   }
 

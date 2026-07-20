@@ -3,6 +3,38 @@ const AppRouter = {
     home: {
       render: PageTemplates.home,
       init: () => {
+        // Hero Entrance Animation (staggered reveal)
+        const heroTl = gsap.timeline({ delay: 0.1 });
+        heroTl
+          .to('.hero-badge', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' })
+          .fromTo('.hero-title', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
+          .fromTo('.hero-desc', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+          .fromTo('.hero-buttons', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.2')
+          .fromTo('.hero-grid', { opacity: 0, scale: 0.95, x: 30 }, { opacity: 1, scale: 1, x: 0, duration: 0.7, ease: 'power2.out' }, '-=0.5');
+
+        // Scroll Reveal Animations using ScrollTrigger
+        gsap.utils.toArray('.scroll-reveal').forEach(el => {
+          gsap.fromTo(el,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+              scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+            }
+          );
+        });
+
+        // Profile cards stagger reveal
+        const profileCards = document.querySelectorAll('.scroll-reveal-stagger .card1');
+        if (profileCards.length) {
+          gsap.fromTo(profileCards,
+            { opacity: 0, y: 30, scale: 0.95 },
+            {
+              opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.1, ease: 'power2.out',
+              scrollTrigger: { trigger: profileCards[0]?.parentElement, start: 'top 85%', once: true }
+            }
+          );
+        }
+
         // Initialize ShuffleHero
         const shuffleGrid = document.getElementById('shuffle-grid');
         if (shuffleGrid && typeof ShuffleHero !== 'undefined') {
@@ -88,33 +120,48 @@ const AppRouter = {
           });
         }
 
-        // Timeline Fade-In Observer
+        // Timeline Cards - GSAP ScrollTrigger
         const cards = document.querySelectorAll(".timeline-card");
-        if ("IntersectionObserver" in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.remove("opacity-0", "translate-y-8");
-                entry.target.classList.add("opacity-100", "translate-y-0");
-                observer.unobserve(entry.target);
+        if (cards.length) {
+          cards.forEach((card, i) => {
+            gsap.fromTo(card,
+              { opacity: 0, y: 50, scale: 0.97 },
+              {
+                opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'power2.out',
+                scrollTrigger: { trigger: card, start: 'top 85%', once: true }
               }
-            });
-          }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-          cards.forEach(card => observer.observe(card));
-        } else {
-          cards.forEach(card => card.classList.remove("opacity-0", "translate-y-8"));
+            );
+          });
         }
 
         // Store reference to tear down if route changes
         AppRouter.routes.home.cleanup = () => {
-          // Cleanup if needed
+          heroTl.kill();
+          ScrollTrigger.getAll().forEach(st => st.kill());
         };
       }
     },
     products: {
       render: PageTemplates.products,
       init: () => {
+        // Animate page header
+        gsap.fromTo('#app section > div:first-child > div',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 0.1 }
+        );
+
         PageTemplates.handlers.renderProducts("", "all");
+
+        // Animate product cards after render
+        setTimeout(() => {
+          const productCards = document.querySelectorAll('#product-grid > div');
+          if (productCards.length) {
+            gsap.fromTo(productCards,
+              { opacity: 0, y: 30, scale: 0.97 },
+              { opacity: 1, y: 0, scale: 1, duration: 0.4, stagger: 0.06, ease: 'power2.out' }
+            );
+          }
+        }, 50);
 
         const searchInput = document.getElementById("product-search");
         const filterButtons = document.querySelectorAll(".filter-btn");
@@ -126,6 +173,14 @@ const AppRouter = {
           searchInput.addEventListener("input", (e) => {
             lastQuery = e.target.value;
             PageTemplates.handlers.renderProducts(lastQuery, activeCategory);
+            // Animate filtered results
+            setTimeout(() => {
+              const cards = document.querySelectorAll('#product-grid > div');
+              gsap.fromTo(cards,
+                { opacity: 0, y: 15, scale: 0.98 },
+                { opacity: 1, y: 0, scale: 1, duration: 0.3, stagger: 0.04, ease: 'power2.out' }
+              );
+            }, 30);
           });
         }
 
@@ -140,6 +195,14 @@ const AppRouter = {
 
             activeCategory = btn.getAttribute("data-category");
             PageTemplates.handlers.renderProducts(lastQuery, activeCategory);
+            // Animate filtered results
+            setTimeout(() => {
+              const cards = document.querySelectorAll('#product-grid > div');
+              gsap.fromTo(cards,
+                { opacity: 0, y: 15, scale: 0.98 },
+                { opacity: 1, y: 0, scale: 1, duration: 0.3, stagger: 0.04, ease: 'power2.out' }
+              );
+            }, 30);
           });
         });
 
@@ -160,17 +223,49 @@ const AppRouter = {
     },
     terms: {
       render: PageTemplates.terms,
-      init: () => {}
+      init: () => {
+        // Animate terms page entrance
+        gsap.fromTo('#app section > div:first-child > div',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 0.1 }
+        );
+        // Stagger animate accordion items
+        gsap.fromTo('#app .border.border-slate-200.rounded-xl',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out', delay: 0.3 }
+        );
+      }
     },
     catalog: {
       render: PageTemplates.catalog,
       init: () => {
+        // Animate catalog page header
+        gsap.fromTo('#app section > div:first-child > div:first-child',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 0.1 }
+        );
+        // Stagger animate the 5 catalog cards
+        gsap.fromTo('.catalog-card',
+          { opacity: 0, y: 40, scale: 0.97 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.12, ease: 'power2.out', delay: 0.25 }
+        );
         PageTemplates.handlers.setupCatalogDownload();
       }
     },
     contact: {
       render: PageTemplates.contact,
       init: () => {
+        // Animate contact page entrance
+        gsap.fromTo('#app section > div:first-child > div',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 0.1 }
+        );
+        // Stagger animate the two columns
+        gsap.fromTo('#app .grid > div',
+          { opacity: 0, y: 30, scale: 0.97 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.15, ease: 'power2.out', delay: 0.25 }
+        );
+
         const form = document.getElementById("contact-form");
         if (form) {
           form.addEventListener("submit", (e) => {
@@ -203,16 +298,44 @@ const AppRouter = {
     const hash = window.location.hash.replace("#", "") || "home";
     const route = AppRouter.routes[hash] || AppRouter.routes.home;
     const viewContainer = document.getElementById("app");
-    
+
     if (viewContainer) {
-      viewContainer.style.opacity = "0";
-      
-      setTimeout(() => {
-        viewContainer.innerHTML = route.render();
-        route.init();
-        viewContainer.style.opacity = "1";
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      }, 150);
+      // Kill any ongoing GSAP animations on the container
+      gsap.killTweensOf(viewContainer);
+
+      // Smooth GSAP page transition: fade out + slight slide up
+      gsap.to(viewContainer, {
+        opacity: 0,
+        y: -8,
+        duration: 0.2,
+        ease: "power2.in",
+        onComplete: () => {
+          // Scroll to top instantly (before rendering new content)
+          window.scrollTo({ top: 0, behavior: 'instant' });
+
+          // Kill all ScrollTriggers from previous page
+          ScrollTrigger.getAll().forEach(st => st.kill());
+
+          // Render new page
+          viewContainer.innerHTML = route.render();
+          route.init();
+
+          // Reset position for entrance animation
+          gsap.set(viewContainer, { opacity: 0, y: 12 });
+
+          // Smooth entrance: fade in + slide down
+          gsap.to(viewContainer, {
+            opacity: 1,
+            y: 0,
+            duration: 0.4,
+            ease: "power2.out",
+            onComplete: () => {
+              // Refresh ScrollTrigger after new content is rendered
+              ScrollTrigger.refresh();
+            }
+          });
+        }
+      });
     }
 
     const navLinks = document.querySelectorAll(".nav-link");
@@ -241,6 +364,9 @@ const AppRouter = {
   },
 
   init: () => {
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger);
+
     window.addEventListener("hashchange", AppRouter.handleRouting);
     window.addEventListener("DOMContentLoaded", AppRouter.handleRouting);
   }
