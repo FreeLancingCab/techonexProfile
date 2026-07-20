@@ -698,6 +698,7 @@ const PageTemplates = {
       document.body.classList.add("scroll-lock");
 
       // Show modal
+      const content = modal.querySelector(".relative");
       modal.style.pointerEvents = 'auto';
       modal.style.opacity = '1';
       content.style.transform = 'scale(1)';
