@@ -195,8 +195,8 @@ const PageTemplates = {
       </section>
 
       <!-- Detailed product modal overlay -->
-      <div id="product-modal" class="fixed inset-0 bg-slate-950/65 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-4 pt-16 sm:pt-20 opacity-0 pointer-events-none">
-        <div class="relative bg-white border border-slate-200 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl scale-95 max-h-[85vh] flex flex-col modal-content">
+      <div id="product-modal" class="fixed inset-0 bg-slate-950/65 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-4 pt-16 sm:pt-20" style="opacity: 0; pointer-events: none;">
+        <div class="relative bg-white border border-slate-200 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl max-h-[85vh] flex flex-col modal-content" style="transform: scale(0.95); opacity: 0;">
           <button id="modal-close" class="absolute top-3 right-3 z-20 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors">
             <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
@@ -697,14 +697,13 @@ const PageTemplates = {
       document.documentElement.style.setProperty('--scrollbar-width', scrollbarWidth + 'px');
       document.body.classList.add("scroll-lock");
 
-      // GSAP modal entrance animation
-      const overlay = modal;
-      const content = modal.querySelector(".relative");
-      gsap.set(overlay, { opacity: 0, pointerEvents: 'auto' });
-      gsap.set(content, { scale: 0.92, opacity: 0, y: 20 });
-      
-      gsap.to(overlay, { opacity: 1, duration: 0.3, ease: 'power2.out' });
-      gsap.to(content, { scale: 1, opacity: 1, y: 0, duration: 0.35, ease: 'back.out(1.4)', delay: 0.05 });
+      // Show modal
+      modal.style.pointerEvents = 'auto';
+      modal.style.opacity = '1';
+      content.style.transform = 'scale(1)';
+      content.style.opacity = '1';
+      content.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease';
+      modal.style.transition = 'opacity 0.25s ease';
     },
 
     closeProductModal: () => {
@@ -713,16 +712,18 @@ const PageTemplates = {
 
       const content = modal.querySelector(".relative");
       
-      // GSAP modal exit animation
-      gsap.to(content, { scale: 0.95, opacity: 0, y: 10, duration: 0.2, ease: 'power2.in' });
-      gsap.to(modal, { 
-        opacity: 0, duration: 0.25, ease: 'power2.in', delay: 0.05,
-        onComplete: () => {
-          modal.style.pointerEvents = 'none';
-          document.body.classList.remove("scroll-lock");
-          document.documentElement.style.removeProperty('--scrollbar-width');
-        }
-      });
+      // CSS transition close
+      content.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+      modal.style.transition = 'opacity 0.2s ease';
+      content.style.transform = 'scale(0.95)';
+      content.style.opacity = '0';
+      modal.style.opacity = '0';
+      
+      setTimeout(() => {
+        modal.style.pointerEvents = 'none';
+        document.body.classList.remove("scroll-lock");
+        document.documentElement.style.removeProperty('--scrollbar-width');
+      }, 200);
     },
 
     setupCatalogDownload: () => {
