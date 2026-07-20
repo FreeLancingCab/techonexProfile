@@ -205,20 +205,6 @@ const AppRouter = {
             }, 30);
           });
         });
-
-        const modalClose = document.getElementById("modal-close");
-        const modal = document.getElementById("product-modal");
-        
-        if (modalClose) {
-          modalClose.addEventListener("click", PageTemplates.handlers.closeProductModal);
-        }
-        if (modal) {
-          modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-              PageTemplates.handlers.closeProductModal();
-            }
-          });
-        }
       }
     },
     terms: {
@@ -382,6 +368,19 @@ const AppRouter = {
   init: () => {
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
+
+    // Product modal event listeners (modal is in index.html, outside #app)
+    document.getElementById("modal-close")?.addEventListener("click", PageTemplates.handlers.closeProductModal);
+    document.getElementById("product-modal")?.addEventListener("click", (e) => {
+      if (e.target.id === "product-modal") {
+        PageTemplates.handlers.closeProductModal();
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        PageTemplates.handlers.closeProductModal();
+      }
+    });
 
     window.addEventListener("hashchange", AppRouter.handleRouting);
     window.addEventListener("DOMContentLoaded", AppRouter.handleRouting);
