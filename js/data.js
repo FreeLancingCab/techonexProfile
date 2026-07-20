@@ -1,4 +1,6 @@
 const CompanyData = {
+  web3formsKey: "ff19b5f5-1053-4490-9e98-7c1e602ef46d", // Get free key from https://web3forms.com
+  leadEmail: "technoex.sales@gmail.com",
   profile: {
     name: "Technoex Trading Corporation Pvt. Ltd.",
     shortName: "Technoex Trading",

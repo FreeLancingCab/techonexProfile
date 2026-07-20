@@ -98,10 +98,13 @@
         <div class="subscribe-card">
           <span class="card__title">Subscribe</span>
           <p class="card__content">Get fresh web design resources delivered straight to your inbox every week.</p>
-          <div class="card__form">
-            <input placeholder="Your Email" type="email" required>
-            <button class="sign-up" type="submit" onclick="event.preventDefault(); alert('Subscribed successfully!');">Sign up</button>
-          </div>
+          <form class="card__form" id="newsletter-form">
+            <input type="hidden" name="access_key" value="ff19b5f5-1053-4490-9e98-7c1e602ef46d" />
+            <input type="hidden" name="subject" value="New Newsletter Subscription - Technoex Website" />
+            <input type="hidden" name="from_name" value="Technoex Website" />
+            <input placeholder="Your Email" name="email" type="email" required>
+            <button class="sign-up" type="submit">Sign up</button>
+          </form>
         </div>
       </div>
 
@@ -131,6 +134,36 @@
           img.addEventListener('error', () => img.classList.add('loaded'));
         }
       });
+
+      // Newsletter subscribe form
+      const nlForm = document.getElementById('newsletter-form');
+      if (nlForm) {
+        nlForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = nlForm.querySelector('.sign-up');
+          const emailInput = nlForm.querySelector('input[name="email"]');
+          if (!emailInput.value) return;
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+          try {
+            await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: new FormData(nlForm)
+            });
+            btn.textContent = 'Subscribed!';
+            btn.style.background = '#22c55e';
+            emailInput.value = '';
+          } catch (err) {
+            btn.textContent = 'Error';
+            btn.style.background = '#ef4444';
+          }
+          setTimeout(() => {
+            btn.textContent = 'Sign up';
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 3000);
+        });
+      }
     });
 
     // Initialize PillNav

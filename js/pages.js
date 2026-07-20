@@ -331,9 +331,14 @@ const PageTemplates = {
 
             <div id="download-panel-${cat.id}">
               <form class="download-form space-y-3 md:space-y-4" data-catalog-id="${cat.id}">
+                <input type="hidden" name="access_key" value="${CompanyData.web3formsKey}" />
+                <input type="hidden" name="subject" value="Catalog Download Request - ${cat.title}" />
+                <input type="hidden" name="from_name" value="Technoex Website" />
+                <input type="hidden" name="catalog_name" value="${cat.title}" />
                 <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   <input 
                     type="email" 
+                    name="email"
                     class="client-email flex-1 px-3 sm:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm shadow-sm"
                     required 
                     placeholder="Enter your email to download" 
@@ -395,27 +400,30 @@ const PageTemplates = {
             <div class="glass p-5 md:p-8 rounded-2xl border border-slate-200/80 shadow-md">
               <h2 class="text-lg md:text-xl font-bold text-slate-900 mb-4 md:mb-6">Send us a message</h2>
               <form id="contact-form" class="space-y-3 md:space-y-4">
+                <input type="hidden" name="access_key" value="${CompanyData.web3formsKey}" />
+                <input type="hidden" name="subject" value="New Contact Form Submission - Technoex Website" />
+                <input type="hidden" name="from_name" value="Technoex Website" />
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   <div>
                     <label class="block text-xs font-semibold text-slate-600 mb-1.5">First Name</label>
-                    <input type="text" required placeholder="John" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
+                    <input type="text" name="first_name" required placeholder="John" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
                   </div>
                   <div>
                     <label class="block text-xs font-semibold text-slate-600 mb-1.5">Last Name</label>
-                    <input type="text" required placeholder="Doe" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
+                    <input type="text" name="last_name" required placeholder="Doe" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
                   </div>
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-600 mb-1.5">Email</label>
-                  <input type="email" required placeholder="john@company.com" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
+                  <input type="email" name="email" required placeholder="john@company.com" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-600 mb-1.5">Phone</label>
-                  <input type="tel" placeholder="+91 98765 43210" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
+                  <input type="tel" name="phone" placeholder="+91 98765 43210" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm" />
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-600 mb-1.5">Subject</label>
-                  <select class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:border-[#0077C8] transition-colors text-sm">
+                  <select name="subject" class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:border-[#0077C8] transition-colors text-sm">
                     <option>Request Quote</option>
                     <option>Technical Support</option>
                     <option>Partnership Enquiry</option>
@@ -425,7 +433,7 @@ const PageTemplates = {
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-600 mb-1.5">Message</label>
-                  <textarea rows="3" required placeholder="Tell us about your requirements..." class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm resize-none"></textarea>
+                  <textarea name="message" rows="3" required placeholder="Tell us about your requirements..." class="w-full px-3 md:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm resize-none"></textarea>
                 </div>
                 <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-sm shadow-lg shadow-[#0077C8]/20 hover:shadow-[#0077C8]/30 hover:-translate-y-0.5 transition-all duration-200">
                   Send Message
@@ -722,10 +730,11 @@ const PageTemplates = {
       if (!forms.length) return;
 
       forms.forEach(form => {
-        form.addEventListener("submit", (e) => {
+        form.addEventListener("submit", async (e) => {
           e.preventDefault();
           const catalogId = form.getAttribute("data-catalog-id");
-          const email = form.querySelector(".client-email").value;
+          const emailInput = form.querySelector(".client-email");
+          const email = emailInput.value;
           if (!email || !catalogId) return;
 
           const cat = CompanyData.catalogs.find(c => c.id === catalogId);
@@ -734,6 +743,7 @@ const PageTemplates = {
           const panel = document.getElementById(`download-panel-${catalogId}`);
           if (!panel) return;
 
+          // Show loading state
           panel.innerHTML = `
             <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 animate-fade-in-up">
               <div class="flex justify-between items-center mb-2">
@@ -742,7 +752,7 @@ const PageTemplates = {
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Assembling specifications sheets...
+                  Securing your access...
                 </span>
                 <span class="download-percent text-xs font-bold" style="color: ${cat.accent}">0%</span>
               </div>
@@ -750,16 +760,31 @@ const PageTemplates = {
               <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden p-[1px] mb-3">
                 <div class="download-progress-bar h-full rounded-full transition-all duration-100 ease-out" style="width: 0%; background: linear-gradient(135deg, ${cat.accent}cc, ${cat.accent})"></div>
               </div>
-              <p class="text-[10px] text-slate-400">Securing file package for: <span class="text-slate-600 font-semibold">${email}</span></p>
+              <p class="text-[10px] text-slate-400">Verifying email: <span class="text-slate-600 font-semibold">${email}</span></p>
             </div>
           `;
 
           const progressBar = panel.querySelector(".download-progress-bar");
           const percentText = panel.querySelector(".download-percent");
-          
+
+          // Submit email to Web3Forms
+          let leadCaptured = false;
+          try {
+            const formData = new FormData(form);
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData
+            });
+            const result = await response.json();
+            leadCaptured = result.success === true;
+          } catch (err) {
+            console.log("Lead capture failed, continuing with download:", err);
+          }
+
+          // Animate progress bar
           let progress = 0;
           const interval = setInterval(() => {
-            progress += Math.floor(Math.random() * 8) + 6;
+            progress += Math.floor(Math.random() * 10) + 8;
             if (progress >= 100) {
               progress = 100;
               clearInterval(interval);
@@ -792,7 +817,7 @@ const PageTemplates = {
                   </div>
                 `;
 
-                // For Google Drive links, open in new tab instead of dummy anchor
+                // For Google Drive links, open in new tab
                 if (!cat.downloadUrl) {
                   const dummyAnchor = document.createElement("a");
                   dummyAnchor.href = cat.file;
@@ -806,7 +831,7 @@ const PageTemplates = {
 
             if (progressBar) progressBar.style.width = `${progress}%`;
             if (percentText) percentText.innerText = `${progress}%`;
-          }, 80);
+          }, 70);
         });
       });
     },
@@ -819,9 +844,14 @@ const PageTemplates = {
       if (panel) {
         panel.innerHTML = `
           <form class="download-form space-y-3 md:space-y-4" data-catalog-id="${catalogId}">
+            <input type="hidden" name="access_key" value="${CompanyData.web3formsKey}" />
+            <input type="hidden" name="subject" value="Catalog Download Request - ${cat.title}" />
+            <input type="hidden" name="from_name" value="Technoex Website" />
+            <input type="hidden" name="catalog_name" value="${cat.title}" />
             <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <input 
                 type="email" 
+                name="email"
                 class="client-email flex-1 px-3 sm:px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0077C8] transition-colors text-sm shadow-sm"
                 required 
                 placeholder="Enter your email to download" 

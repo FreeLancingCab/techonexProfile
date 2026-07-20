@@ -268,18 +268,34 @@ const AppRouter = {
 
         const form = document.getElementById("contact-form");
         if (form) {
-          form.addEventListener("submit", (e) => {
+          form.addEventListener("submit", async (e) => {
             e.preventDefault();
             const btn = form.querySelector("button[type='submit']");
-            btn.textContent = "Message Sent!";
-            btn.classList.add("bg-green-500");
-            btn.classList.remove("bg-gradient-to-r", "from-[#003B73]", "to-[#0077C8]");
-            setTimeout(() => {
-              btn.textContent = "Send Message";
-              btn.classList.remove("bg-green-500");
-              btn.classList.add("bg-gradient-to-r", "from-[#003B73]", "to-[#0077C8]");
+            const originalText = btn.textContent;
+            btn.textContent = "Sending...";
+            btn.disabled = true;
+
+            try {
+              const formData = new FormData(form);
+              await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+              });
+              btn.textContent = "Message Sent!";
+              btn.classList.add("bg-green-500");
+              btn.classList.remove("bg-gradient-to-r", "from-[#003B73]", "to-[#0077C8]");
               form.reset();
-            }, 2000);
+            } catch (err) {
+              btn.textContent = "Error - Try Again";
+              btn.classList.add("bg-red-500");
+            }
+
+            setTimeout(() => {
+              btn.textContent = originalText;
+              btn.classList.remove("bg-green-500", "bg-red-500");
+              btn.classList.add("bg-gradient-to-r", "from-[#003B73]", "to-[#0077C8]");
+              btn.disabled = false;
+            }, 3000);
           });
         }
       }
