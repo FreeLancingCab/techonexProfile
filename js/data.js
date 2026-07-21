@@ -6,7 +6,7 @@ const CompanyData = {
     shortName: "Technoex Trading",
     established: "2009",
     location: "Faridabad, Haryana",
-    turnover: "₹5-25 Cr",
+    turnover: "₹5-50 Cr",
     employees: "26-50",
     brands: ["Hitachi", "Technoex", "Trident", "Uniline", "Hitachi Hi-Rel"]
   },
