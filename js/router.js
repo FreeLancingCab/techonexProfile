@@ -240,6 +240,29 @@ const AppRouter = {
           { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.12, ease: 'power2.out', delay: 0.25 }
         );
         PageTemplates.handlers.setupCatalogDownload();
+
+        // Catalog Search Filter
+        const searchInput = document.getElementById('catalog-search');
+        const catalogList = document.getElementById('catalog-list');
+        const noResults = document.getElementById('catalog-no-results');
+        if (searchInput && catalogList) {
+          searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            const cards = catalogList.querySelectorAll('.catalog-card');
+            let visibleCount = 0;
+            cards.forEach(card => {
+              const title = (card.getAttribute('data-title') || '').toLowerCase();
+              const subtitle = (card.getAttribute('data-subtitle') || '').toLowerCase();
+              const desc = (card.getAttribute('data-desc') || '').toLowerCase();
+              const match = !query || title.includes(query) || subtitle.includes(query) || desc.includes(query);
+              card.style.display = match ? '' : 'none';
+              if (match) visibleCount++;
+            });
+            if (noResults) {
+              noResults.classList.toggle('hidden', visibleCount > 0);
+            }
+          });
+        }
       }
     },
     contact: {

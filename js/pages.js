@@ -263,7 +263,7 @@ const PageTemplates = {
     const catalogCards = CompanyData.catalogs.map((cat, index) => {
       const iconSVG = PageTemplates.helpers.getIcon(cat.icon);
       return `
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center bg-white/70 rounded-2xl border border-slate-200/80 p-5 md:p-8 glass shadow-md catalog-card" data-index="${index}">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center bg-white/70 rounded-2xl border border-slate-200/80 p-5 md:p-8 glass shadow-md catalog-card" data-index="${index}" data-title="${cat.title}" data-subtitle="${cat.subtitle}" data-desc="${cat.description.replace(/<[^>]*>/g, '')}">
           
           <!-- Book Cover Catalog -->
           <div class="md:col-span-4 flex justify-center py-4">
@@ -361,7 +361,29 @@ const PageTemplates = {
             </p>
           </div>
 
-          <div class="space-y-6 md:space-y-8">
+          <!-- Search Catalogs -->
+          <div class="flex justify-center mb-8 md:mb-12">
+            <div class="catalog-search-container">
+              <input type="text" id="catalog-search" class="catalog-search-input" required placeholder="Type to search catalogs...">
+              <div class="catalog-search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <title>Search</title>
+                  <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- No Results Message -->
+          <div id="catalog-no-results" class="hidden text-center py-12">
+            <svg class="w-12 h-12 text-slate-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <p class="text-slate-400 font-medium text-sm">No catalogs match your search.</p>
+          </div>
+
+          <div id="catalog-list" class="space-y-6 md:space-y-8">
             ${catalogCards}
           </div>
         </div>
