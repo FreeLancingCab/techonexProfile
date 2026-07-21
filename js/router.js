@@ -38,7 +38,7 @@ const AppRouter = {
         // Initialize ShuffleHero
         const shuffleGrid = document.getElementById('shuffle-grid');
         if (shuffleGrid && typeof ShuffleHero !== 'undefined') {
-          new ShuffleHero(shuffleGrid, {
+          AppRouter.routes.home._shuffleHero = new ShuffleHero(shuffleGrid, {
             images: [
               { id: 1, src: "assets/CompPro1.jpg" },
               { id: 2, src: "assets/CompPro2.jpg" },
@@ -138,6 +138,10 @@ const AppRouter = {
         AppRouter.routes.home.cleanup = () => {
           heroTl.kill();
           ScrollTrigger.getAll().forEach(st => st.kill());
+          if (AppRouter.routes.home._shuffleHero) {
+            AppRouter.routes.home._shuffleHero.destroy();
+            AppRouter.routes.home._shuffleHero = null;
+          }
         };
       }
     },
