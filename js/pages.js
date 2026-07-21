@@ -364,8 +364,8 @@ const PageTemplates = {
           <!-- Search Catalogs -->
           <div class="flex justify-center mb-8 md:mb-12">
             <div class="flex h-[38px] text-[14px] text-white/60">
-              <input id="catalog-search" placeholder="Search catalogs..." type="text" class="w-[220px] bg-[#003B73] px-3 py-1 rounded-l-lg border border-[#0077C8]/30 focus:outline-none focus:ring-2 focus:ring-[#0077C8] focus:ring-offset-2 focus:ring-offset-[#003B73] transition-all duration-150 ease-in-out placeholder-blue-200/50 text-white" />
-              <div class="text-white select-none cursor-default px-3 py-1 rounded-r-lg border-y border-r border-[#0077C8]/30 border-y-[#0077C8]/30 flex items-center bg-[#003B73] font-medium">
+              <input id="catalog-search" placeholder="Search catalogs..." type="text" class="w-[220px] bg-[#e0f2fe] px-3 py-1 rounded-l-lg border border-[#0077C8]/30 focus:outline-none focus:ring-2 focus:ring-[#0077C8] focus:ring-offset-2 focus:ring-offset-[#e0f2fe] transition-all duration-150 ease-in-out placeholder-[#0077C8]/50 text-[#003B73]" />
+              <div class="text-[#003B73] select-none cursor-default px-3 py-1 rounded-r-lg border-y border-r border-[#0077C8]/30 border-y-[#0077C8]/30 flex items-center bg-[#e0f2fe] font-semibold">
                 .PDF
               </div>
             </div>
