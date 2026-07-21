@@ -1248,57 +1248,7 @@ html {
 }
 
 /* Catalog Search */
-.catalog-search-container {
-  position: relative;
-  --size-button: 42px;
-  color: #0077C8;
-}
-
-.catalog-search-input {
-  padding-left: var(--size-button);
-  height: var(--size-button);
-  font-size: 14px;
-  border: 1px solid #e2e8f0;
-  color: #1e293b;
-  outline: none;
-  width: var(--size-button);
-  transition: all ease 0.3s;
-  background-color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-.catalog-search-input::placeholder {
-  color: #94a3b8;
-}
-
-.catalog-search-input:focus,
-.catalog-search-input:not(:invalid) {
-  width: 280px;
-  cursor: text;
-  border-color: #0077C8;
-  box-shadow: 0 0 0 3px rgba(0,119,200,0.1), 0 1px 3px rgba(0,0,0,0.06);
-}
-
-.catalog-search-input:focus + .catalog-search-icon,
-.catalog-search-input:not(:invalid) + .catalog-search-icon {
-  pointer-events: all;
-  cursor: pointer;
-}
-
-.catalog-search-container .catalog-search-icon {
-  position: absolute;
-  width: var(--size-button);
-  height: var(--size-button);
-  top: 0;
-  left: 0;
-  padding: 10px;
-  pointer-events: none;
-  color: #0077C8;
-}
-
-.catalog-search-container .catalog-search-icon svg {
+.catalog-search-form {
+  max-width: 320px;
   width: 100%;
-  height: 100%;
 }

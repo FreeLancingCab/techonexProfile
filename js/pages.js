@@ -363,16 +363,19 @@ const PageTemplates = {
 
           <!-- Search Catalogs -->
           <div class="flex justify-center mb-8 md:mb-12">
-            <div class="catalog-search-container">
-              <input type="text" id="catalog-search" class="catalog-search-input" required placeholder="Type to search catalogs...">
-              <div class="catalog-search-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-                  <title>Search</title>
-                  <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path>
+            <form class="catalog-search-form relative" onsubmit="return false;">
+              <button type="button" class="absolute left-3 -translate-y-1/2 top-1/2 p-1 pointer-events-none">
+                <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search" class="w-5 h-5 text-gray-500">
+                  <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
-              </div>
-            </div>
+              </button>
+              <input id="catalog-search" class="catalog-search-input rounded-full px-10 py-3 border-2 border-slate-200 focus:outline-none focus:border-[#0077C8] placeholder-gray-400 transition-all duration-300 shadow-md" placeholder="Search catalogs..." required type="text" />
+              <button type="reset" class="absolute right-3 -translate-y-1/2 top-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors" onclick="document.getElementById('catalog-search').dispatchEvent(new Event('input'))">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </form>
           </div>
 
           <!-- No Results Message -->
