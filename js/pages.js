@@ -363,14 +363,10 @@ const PageTemplates = {
 
           <!-- Search Catalogs -->
           <div class="flex justify-center mb-8 md:mb-12">
-            <div class="catalog-search-container">
-              <input type="text" id="catalog-search" class="catalog-search-input" required placeholder="Type to search catalogs...">
-              <div class="catalog-search-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-                  <title>Search</title>
-                  <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path>
-                </svg>
+            <div class="flex h-[38px] text-[14px] text-white/60">
+              <input id="catalog-search" placeholder="Search catalogs..." type="text" class="w-[220px] bg-[#09090b] px-3 py-1 rounded-l-lg border border-white/10 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-[#09090b] transition-all duration-150 ease-in-out placeholder-gray-500" />
+              <div class="text-[#f4f4f5] select-none cursor-default px-3 py-1 rounded-r-lg border-y border-r border-r-white/10 border-y-white/10 flex items-center">
+                .PDF
               </div>
             </div>
           </div>
