@@ -44,7 +44,7 @@ const PageTemplates = {
               Technoex Trading Corporation
             </h1>
             <p class="hero-desc text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-0">
-              Authorized distributor for Hitachi, Trident & Uniline. Industrial compressors, dryers, and UPS systems since 2009.
+              Powering India's industrial backbone with <strong class="text-[#0077C8]">500+ installations</strong> across manufacturing plants, hospitals, and infrastructure projects. Authorized distributor for <strong class="text-[#0077C8]">Hitachi, Trident & Uniline</strong> since 2009.
             </p>
             <div class="hero-buttons flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start opacity-0">
               <a href="#products" class="px-5 py-2.5 md:px-6 md:py-3 rounded-xl bg-gradient-to-r from-[#003B73] to-[#0077C8] text-white font-semibold text-xs md:text-sm shadow-lg shadow-[#0077C8]/20 hover:shadow-[#0077C8]/30 hover:-translate-y-0.5 transition-all duration-200">
