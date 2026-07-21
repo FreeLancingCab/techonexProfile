@@ -392,22 +392,6 @@ const CompanyData = {
       icon: "accessories"
     },
     {
-      id: "amc-service-catalog",
-      title: "Technoex Annual Maintenance Contract Catalogue",
-      subtitle: "Preventive & Corrective Maintenance Plans",
-      description: "Service level specifications for <strong class='text-[#0077C8]'>Technoex AMC Plans</strong> including preventive maintenance schedules, response time guarantees, spare parts coverage matrices, and equipment uptime commitment charts.",
-      filename: "annual_maintenance_contract_catalogue.pdf",
-      version: "2026.1",
-      fileSize: "1.6 MB",
-      pageCount: 4,
-      releaseDate: "January 2026",
-      file: "",
-      downloadUrl: "",
-      gradient: "from-[#283593] via-[#0d1140] to-slate-900",
-      accent: "#3F51B5",
-      icon: "services"
-    },
-    {
       id: "coldspell-technoex-catalog",
       title: "Technoex Coldspell Catalogue",
       subtitle: "Refrigerated Air Drying Systems",
