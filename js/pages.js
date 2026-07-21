@@ -604,7 +604,7 @@ const PageTemplates = {
       }
 
       grid.innerHTML = filtered.map(prod => {
-        const productImage = prod.image || 'assets/CompPro1.jpg';
+        const productImage = encodeURI(prod.image || 'assets/CompPro1.jpg');
 
         return `
           <div class="glass p-5 rounded-2xl flex flex-col justify-between hover:border-[#0077C8]/35 hover:shadow-md transition-all duration-300 group cursor-pointer" onclick="PageTemplates.handlers.openProductModal('${prod.id}')">
@@ -636,7 +636,7 @@ const PageTemplates = {
       const body = document.getElementById("modal-content-body");
       if (!modal || !body) return;
 
-      const productImage = prod.image || 'assets/CompPro1.jpg';
+      const productImage = encodeURI(prod.image || 'assets/CompPro1.jpg');
       
       const specList = prod.specifications.map(spec => `
         <li class="flex items-start gap-2 text-slate-600 text-xs">
